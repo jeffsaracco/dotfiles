@@ -1,0 +1,39 @@
+[user]
+  name = Jeff Saracco
+  email = jeffsaracco@github.com
+  signingkey = 1C71D56F217BE67E
+[github]
+  user = jeffsaracco
+[push]
+  default = simple
+[credential]
+  helper = osxkeychain
+[alias]
+  st = status
+  di = diff
+  co = checkout
+  ci = commit
+  br = branch
+  sta = stash
+  llog = log --date=local
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[apply]
+  whitespace = nowarn
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[commit]
+  gpgsign = true
+[core]
+  excludesfile = /Users/jeffsaracco/.gitignore_global
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
