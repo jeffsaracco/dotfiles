@@ -1,4 +1,4 @@
-My ZSH config
+jeffsaracco dotfiles
 ============
 
 ```
