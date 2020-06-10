@@ -1,0 +1,98 @@
+{
+  "_from": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball",
+  "_id": "atom-vim-like-tab@1.5.3",
+  "_inBundle": false,
+  "_integrity": "sha512-lwoi1rqu1IqjixIojEzHpUuR0XWaeTlt673LZ/j6z5LVBRxx7h1KckeWYXXwGoJRKwtaLGObxvCA5lb8hU6f7Q==",
+  "_location": "/atom-vim-like-tab",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball",
+  "_shasum": "167695fd3cf514bd6d7f152e636edb1af3bbeb16",
+  "_spec": "https://www.atom.io/api/packages/atom-vim-like-tab/versions/1.5.3/tarball",
+  "_where": "/private/var/folders/7k/07vc5qbj3g5fpyp0wht5q5g00000gl/T/apm-install-dir-11986-39345-4du82v.5cuob",
+  "atomTestRunner": "atom-mocha-test-runner",
+  "bugs": {
+    "url": "https://github.com/kesin11/atom-vim-like-tab/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "enableTopTabPanel": {
+      "type": "boolean",
+      "default": true,
+      "description": "If enable, vim like tab list will shown on top of editor view."
+    },
+    "dontRestoreInactiveTabsPane": {
+      "type": "boolean",
+      "default": false,
+      "description": "At startup, prevents restoring the tabs that inactived at the time of last quit. ## NOTE: This function using atom private API. Maybe not working newer atom version ##"
+    }
+  },
+  "dependencies": {
+    "atom-select-list": "0.7.1",
+    "etch": "^0.14.0",
+    "underscore-plus": "^1.6.6"
+  },
+  "deprecated": false,
+  "description": "Add Vim like tab features in Atom",
+  "devDependencies": {
+    "atom-mocha-test-runner": "1.2.0",
+    "chai": "4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-jasmine": "^2.9.3",
+    "npm-watch": "^0.3.0"
+  },
+  "engines": {
+    "atom": ">=1.28.0 <2.0.0"
+  },
+  "homepage": "https://github.com/kesin11/atom-vim-like-tab#readme",
+  "keywords": [
+    "Vim",
+    "Tab",
+    "Pane"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "atom-vim-like-tab",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kesin11/atom-vim-like-tab.git"
+  },
+  "scripts": {
+    "lint": "eslint lib spec",
+    "test": "atom --test ./spec/*",
+    "test:beta": "atom --test ./spec/*",
+    "watch": "npm-watch test",
+    "watch:beta": "npm-watch test:beta"
+  },
+  "version": "1.5.3",
+  "watch": {
+    "test": {
+      "patterns": [
+        "lib",
+        "spec"
+      ],
+      "extensions": "js",
+      "quiet": true
+    },
+    "test:beta": {
+      "patterns": [
+        "lib",
+        "spec"
+      ],
+      "extensions": "js",
+      "quiet": true
+    }
+  }
+}

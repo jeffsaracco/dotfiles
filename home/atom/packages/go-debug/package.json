@@ -1,0 +1,138 @@
+{
+  "_from": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball",
+  "_id": "go-debug@1.7.0",
+  "_inBundle": false,
+  "_integrity": "sha512-RTZAbHbEb8pTUuDNNKvT9m95oqN0Cy/tlSWJHZX98epz50IZav2CP4tf8bWI47pvm1JD92+LqHff+0iaC4z26Q==",
+  "_location": "/go-debug",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball",
+  "_shasum": "ce18a91c354f9a18b1c5901c39042700069a86ad",
+  "_spec": "https://www.atom.io/api/packages/go-debug/versions/1.7.0/tarball",
+  "_where": "/private/var/folders/7k/07vc5qbj3g5fpyp0wht5q5g00000gl/T/apm-install-dir-12007-16383-ygkvlg.92d49",
+  "activationHooks": [
+    "language-go:grammar-used"
+  ],
+  "bugs": {
+    "url": "https://github.com/lloiser/go-debug/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "configurationFile": {
+      "title": "Configuration File",
+      "description": "Path to the configuration file. Separate multiple paths with commas",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "order": 1
+    },
+    "dlvPath": {
+      "title": "dlv path",
+      "description": "The path to a dlv executable to use.",
+      "type": "string",
+      "default": "",
+      "order": 2
+    },
+    "limitCommandsToGo": {
+      "title": "Commands available only in go source",
+      "description": "Determines whether the commands of this package are only available in go source files or in all files.",
+      "type": "boolean",
+      "default": true,
+      "order": 3
+    },
+    "panelInitialVisible": {
+      "title": "Panel Initially Visible",
+      "description": "Determines whether the panel is initially visible or not.",
+      "type": "boolean",
+      "default": false,
+      "order": 4
+    },
+    "clearOutputOnStart": {
+      "title": "Clear output panel on start",
+      "type": "boolean",
+      "default": false,
+      "order": 5
+    },
+    "saveAllFiles": {
+      "title": "Save all files before starting delve",
+      "type": "boolean",
+      "default": false,
+      "order": 6
+    }
+  },
+  "consumedServices": {
+    "go-config": {
+      "versions": {
+        "1.0.0": "consumeGoconfig"
+      }
+    },
+    "go-get": {
+      "versions": {
+        "2.0.0": "consumeGoget"
+      }
+    }
+  },
+  "dependencies": {
+    "ansi-to-html": "^0.6.3",
+    "atom-package-deps": "^4.6.0",
+    "etch": "^0.12.6",
+    "json-rpc2": "^1.0.2",
+    "redux": "^3.7.2",
+    "semver": "^5.4.1",
+    "untildify": "^3.0.2"
+  },
+  "deprecated": false,
+  "description": "go debugger using delve for atom",
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "atom": ">=1.17.0 <2.0.0"
+  },
+  "homepage": "https://github.com/lloiser/go-debug#readme",
+  "keywords": [
+    "go",
+    "golang",
+    "debug",
+    "debugger",
+    "delve",
+    "dlv"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "go-debug",
+  "package-deps": [
+    "go-plus"
+  ],
+  "providedServices": {
+    "go-plus.view": {
+      "versions": {
+        "0.1.0": "provideGoPlusView"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lloiser/go-debug.git"
+  },
+  "standard": {
+    "globals": [
+      "advanceClock",
+      "atom",
+      "waitsForPromise"
+    ]
+  },
+  "version": "1.7.0"
+}

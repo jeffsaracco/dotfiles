@@ -1,0 +1,31 @@
+"*":
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+  core:
+    audioBeep: false
+    closeDeletedFileTabs: true
+    openEmptyEditorOnStart: false
+    telemetryConsent: "limited"
+    titleBar: "hidden"
+    useTreeSitterParsers: true
+  editor:
+    fontFamily: "Droid Sans Mono Slashed for Powerline"
+    fontSize: 12
+  "exception-reporting":
+    userId: "0e8c52ac-42f1-457a-8597-aa53f5121682"
+  "markdown-preview":
+    useGitHubStyle: true
+  "platformio-ide-terminal":
+    style: {}
+  "ruby-test":
+    minitestFileCommand: "bin/testrb {relative_path}"
+    minitestSingleCommand: "bin/testrb {relative_path} -n \"/{regex}/\""
+    testFileCommand: "bin/testrb {relative_path}"
+    testFramework: "minitest"
+  teletype:
+    askBeforeJoiningPortalViaExternalApp: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false

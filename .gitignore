@@ -4,3 +4,11 @@ home/config/nvim/doc/tags
 home/config/nvim/bundle/*
 home/tmux/resurrect/*
 home/tmux/plugins/*
+
+home/atom/blob-store
+home/atom/compile-cache
+home/atom/dev
+home/atom/storage
+home/atom/.apm
+home/atom/.node-gyp
+home/atom/.npm
