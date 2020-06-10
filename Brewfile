@@ -14,6 +14,7 @@ brew "boost"
 brew "cmake"
 brew "coreutils"
 brew "cowsay"
+brew 'gawk'
 brew "go"
 brew "dep"
 brew "diff-so-fancy"
