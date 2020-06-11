@@ -6,3 +6,9 @@ ln -sf ~/dotfiles/home/git/gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/home/config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/home/tmux/tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/home/atom ~/.atom
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install exa
+cargo install --locked bat

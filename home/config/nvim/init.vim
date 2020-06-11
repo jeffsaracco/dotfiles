@@ -55,6 +55,7 @@ Plug 'kana/vim-textobj-user', { 'for': ['ruby'] }
 Plug 'Julian/vim-textobj-variable-segment', { 'for': ['ruby'] }
 Plug 'kana/vim-textobj-line', { 'for': ['ruby'] }
 Plug 'thinca/vim-textobj-between', { 'for': ['ruby'] }
+Plug 'vim-scripts/matchit.zip'
 
 "
 " General Editing
