@@ -159,8 +159,10 @@ autoload -U compinit && compinit
 
 export PGHOST=localhost
 
-export NVM_DIR="/Users/$DEFAULT_USER/.nvm"
+export NVM_DIR="/$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"  # This loads cargo
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:
 export PATH=$PATH:~/dotfiles/bin:
