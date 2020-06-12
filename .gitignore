@@ -15,3 +15,8 @@ home/atom/.npm
 home/atom/.atom-socket*
 
 bin/diff-so-fancy
+
+.idea
+.DS_Store
+
+node_modules

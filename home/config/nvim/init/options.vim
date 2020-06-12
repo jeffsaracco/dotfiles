@@ -1,5 +1,6 @@
 scriptencoding utf-8
 
+set encoding=UTF-8
 set updatetime=100
 set guifont=Roboto\ Mono\ Medium\ For\ Powerline:h14
 set guioptions-=T               " Remove GUI toolbar

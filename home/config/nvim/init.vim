@@ -82,6 +82,7 @@ Plug 'pbogut/fzf-mru.vim'
 
 Plug 'jremmen/vim-ripgrep'
 Plug 'google/vim-searchindex'
+Plug 'yuki-ycino/fzf-preview.vim'
 
 "
 " Navigation
