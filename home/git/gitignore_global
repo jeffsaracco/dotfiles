@@ -30,3 +30,6 @@ Thumbs.db
 # Jetbrains idea files #
 ########################
 .idea
+
+# Weird Files
+<Plug>_
