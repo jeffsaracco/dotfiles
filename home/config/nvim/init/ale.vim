@@ -1,6 +1,5 @@
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'go': ['gofmt', 'gopls'],
 \   'ruby': ['solargraph', 'rubocop'],
 \}
 
@@ -8,13 +7,15 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
-\   'go': ['gofmt'],
 \   'ruby': ['remove_trailing_lines', 'rubocop', 'trim_whitespace'],
 \}
 
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+
+" Only run linters explicitly defined in g:ale_linters
+let g:ale_linters_explicit = 1
 
 let g:ale_sign_column_always = 0
 
