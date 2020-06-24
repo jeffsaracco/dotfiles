@@ -1,5 +1,6 @@
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'go': ['vet', 'golint', 'gofmt', 'gopls', 'golangci-lint'],
 \   'ruby': ['solargraph', 'rubocop'],
 \}
 
@@ -7,6 +8,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
+\   'go': ['gofmt'],
 \   'ruby': ['remove_trailing_lines', 'rubocop', 'trim_whitespace'],
 \}
 

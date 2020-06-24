@@ -13,11 +13,11 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 
 " Linting
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = []
-let g:go_metalinter_enabled = []
-let g:go_metalinter_command = "golangci-lint run"
-let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 0
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = '5s'
+let g:go_metalinter_command = 'golangci-lint'
 
 " Alternate Files/Definitions
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
