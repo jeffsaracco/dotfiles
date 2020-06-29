@@ -70,6 +70,7 @@ Plug 'Peeja/vim-cdo'
 Plug 'tpope/vim-projectionist' " this is for :AV
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'vim-scripts/regreplop.vim' " This is for ctrl-K replacing
+Plug 'danilamihailov/beacon.nvim'
 
 "
 " Searching
