@@ -47,6 +47,7 @@ brew "openssl"
 brew "libxml2"
 brew "readline"
 brew "python"
+brew "python3"
 brew "macvim"
 brew "md5sha1sum"
 brew "memcached", restart_service: true
