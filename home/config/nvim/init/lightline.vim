@@ -1,4 +1,4 @@
-let g:lightline = {'colorscheme': 'wombat'}
+let g:lightline = {'colorscheme': 'ci_dark'}
 
 let g:lightline#ale#indicator_ok = "👍"
 

@@ -35,6 +35,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
+Plug 'chuling/ci_dark'
+Plug 'luochen1990/rainbow'
 
 "
 " Ruby / Rails
