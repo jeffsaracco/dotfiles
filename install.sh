@@ -7,6 +7,7 @@ ln -sf ~/dotfiles/home/config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/home/config/alacritty ~/.config/alacritty
 ln -sf ~/dotfiles/home/tmux/tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/home/atom ~/.atom
+ln -sf ~/dotfiles/home/noti/noti.yml ~/.noti.yaml
 
 ln -sf ~/dotfiles/diff-so-fancy/diff-so-fancy ~/dotfiles/bin/diff-so-fancy
 

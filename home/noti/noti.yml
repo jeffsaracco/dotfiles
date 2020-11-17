@@ -1,0 +1,5 @@
+nsuser:
+  soundName: Ping
+  soundNameFail: Basso
+say:
+  voice: Alex
