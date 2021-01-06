@@ -1,1 +1,1 @@
-nmap =j :%!python -m json.tool && set filetype=json;<CR>
+nmap =j :set filetype=json <bar> %!python -m json.tool<CR>
