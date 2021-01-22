@@ -48,12 +48,6 @@ inoremap jj <Esc>
 nnoremap <C-e>  3<C-e>
 nnoremap <C-y>  3<C-y>
 
-" File tree browser
-map \           :NERDTreeToggle<CR>
-
-" File tree browser showing current file - pipe (shift-backslash)
-map \|          :NERDTreeFind<CR>
-
 "indent/unindent visual mode selection with tab/shift+tab
 vmap <tab> >gv
 vmap <s-tab> <gv
