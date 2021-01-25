@@ -17,7 +17,7 @@ ln -sf ~/dotfiles/home/noti/noti.yml ~/.noti.yaml
 
 ln -sf ~/dotfiles/diff-so-fancy/diff-so-fancy ~/dotfiles/bin/diff-so-fancy
 
-ln -sf ~/dotfiles/home/dotbin/tmuxinator.zsh ~/bin/tmuxinator.zsh
+ln -sf ~/dotfiles/home/dotbin/tmuxinator.zsh ~/.bin/tmuxinator.zsh
 ln -sf ~/dotfiles/home/p10k.zsh ~/.p10k.zsh
 
 # Install Rust
