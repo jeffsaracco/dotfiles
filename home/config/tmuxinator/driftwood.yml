@@ -1,0 +1,15 @@
+# /Users/jeffsaracco/.config/tmuxinator/driftwood.yml
+
+name: driftwood
+root: ~/go/src/github.com/github/driftwood
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -

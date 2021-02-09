@@ -1,0 +1,15 @@
+# /Users/jeffsaracco/.config/tmuxinator/hydro-schemas.yml
+
+name: hydro-schemas
+root: ~/github/hydro-schemas
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -

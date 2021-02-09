@@ -12,6 +12,7 @@ ln -sf ~/dotfiles/home/git/gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/home/config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/home/config/alacritty ~/.config/alacritty
 ln -sf ~/dotfiles/home/tmux/tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/home/config/tmuxinator ~/.config/tmuxinator
 ln -sf ~/dotfiles/home/atom ~/.atom
 ln -sf ~/dotfiles/home/noti/noti.yml ~/.noti.yaml
 

@@ -1,0 +1,15 @@
+# /Users/jeffsaracco/.config/tmuxinator/blobhead.yml
+
+name: blobhead
+root: ~/go/src/github.com/github/blobhead
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -

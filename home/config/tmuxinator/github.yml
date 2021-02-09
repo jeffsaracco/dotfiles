@@ -1,0 +1,15 @@
+# ~/.tmuxinator/github.yml
+
+name: github
+root: ~/github/github
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -
