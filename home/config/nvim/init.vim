@@ -72,20 +72,18 @@ Plug 'Peeja/vim-cdo'
 Plug 'tpope/vim-projectionist' " this is for :AV
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'vim-scripts/regreplop.vim' " This is for ctrl-K replacing
-Plug 'danilamihailov/beacon.nvim'
+Plug 'danilamihailov/beacon.nvim' "Shows the cursor location with a blink after jumping
 
 "
 " Searching
 "
 Plug 'tpope/vim-abolish' " For searching with :S vs :s
 Plug 'henrik/vim-qargs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'pbogut/fzf-mru.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 
 Plug 'jremmen/vim-ripgrep'
 Plug 'google/vim-searchindex'
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 
 "
 " Navigation

@@ -10,7 +10,6 @@ nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 
 nnoremap <silent> [fzf-p]f     :<C-u>FzfPreviewProjectFiles<CR>
-nnoremap <silent> [fzf-p]p     :<C-u>FzfPreviewFromResources project_mru git<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>FzfPreviewGitStatus<CR>
 nnoremap <silent> [fzf-p]o     :<C-u>FzfPreviewFromResources buffer project_mru<CR>
 nnoremap <silent> [fzf-p]<C-o> :<C-u>FzfPreviewJumps<CR>

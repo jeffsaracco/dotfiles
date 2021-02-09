@@ -32,7 +32,7 @@ let g:fzf_preview_git_files_command = 'git ls-files --exclude-standard'
 let g:fzf_preview_directory_files_command = 'rg --files --follow --no-messages -g \!"* *"'
 
 " Commands used to get the git status file list
-let g:fzf_preview_git_status_command = "git status --short --untracked-files=all | awk '{if (substr($0,2,1) !~ / /) print $2}'"
+let g:fzf_preview_git_status_command = 'git -c color.status=always status --short --untracked-files=all'
 
 " Commands used for git status preview.
 let g:fzf_preview_git_status_preview_command =  "[[ $(git diff -- {-1}) != \"\" ]] && git diff --color=always -- {-1} || " .
@@ -48,8 +48,8 @@ let g:fzf_preview_cache_directory = expand('~/.cache/vim/fzf_preview')
 " If this value is not 0, disable mru and mrw
 let g:fzf_preview_disable_mru = 0
 
-" Use look-ahead cache for MRU and MRW
-let g:fzf_preview_use_look_ahead_mr_cache = 0
+" Limit of the number of files to be saved by mru
+let g:fzf_preview_mru_limit = 1000
 
 " Commands used for current file lines
 " let g:fzf_preview_lines_command = 'cat'
