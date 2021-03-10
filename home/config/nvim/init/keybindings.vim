@@ -53,7 +53,7 @@ vmap <tab> >gv
 vmap <s-tab> <gv
 
 " Git blame
-map <leader>g   :Gblame<CR>
+map <leader>g   :Git blame<CR>
 
 " Comment/uncomment lines
 map <leader>/   <plug>NERDCommenterToggle
