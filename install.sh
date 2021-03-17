@@ -27,3 +27,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo install exa
 cargo install --locked bat
+
+# Install FZF extensions
+$(brew --prefix)/opt/fzf/install
