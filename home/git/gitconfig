@@ -1,7 +1,7 @@
 [user]
   name = Jeff Saracco
   email = jeffsaracco@github.com
-  signingkey = 1C71D56F217BE67E
+  signingkey = 217BE67E
 [github]
   user = jeffsaracco
 [push]
