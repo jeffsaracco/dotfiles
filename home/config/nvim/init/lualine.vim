@@ -9,7 +9,7 @@ let g:lualine = {
     \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
     \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
     \  'lualine_c' : [
-    \       ['filename', {'file_status': v:true,},],
+    \       ['filename', {'file_status': v:true, 'full_path': v:true,},],
     \       ['diagnostics', {'sources': [ 'ale', 'nvim_lsp' ],  'color_info': '#ffffff', 'color_error': '#ff0000', 'color_warn': 'fff000',}, ],
     \       ['diff', {'color_added': '#27e000', 'color_modified': '#fff000', 'color_deleted': '#ffffff',}, ],
     \   ],
