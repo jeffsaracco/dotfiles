@@ -11,3 +11,6 @@ set fillchars+=vert:│
 let g:airline_theme = 'ci_dark'
 
 let g:rainbow_active = 1
+
+hi QuickFixLine guibg=#2b4f73
+hi QuickFixLine guifg=none
