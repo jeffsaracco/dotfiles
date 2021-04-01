@@ -38,6 +38,9 @@ Plug 'rakr/vim-one'
 Plug 'chuling/ci_dark'
 Plug 'luochen1990/rainbow'
 
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 "
 " Ruby / Rails
 "
@@ -65,8 +68,6 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
 Plug 'matt-royal/diffthese'
 Plug 'Peeja/vim-cdo'
 Plug 'tpope/vim-projectionist' " this is for :AV
