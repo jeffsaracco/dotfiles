@@ -24,6 +24,7 @@ brew "libyaml"
 brew "docker-compose"
 brew "elasticsearch@2.4", restart_service: true
 brew "exa"
+brew "fd"
 brew "findutils"
 brew "fortune"
 brew "fswatch"

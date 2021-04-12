@@ -17,6 +17,9 @@ ln -sf ~/dotfiles/home/atom ~/.atom
 ln -sf ~/dotfiles/home/noti/noti.yml ~/.noti.yaml
 ln -sf ~/dotfiles/home/hyper.js ~/.hyper.js
 
+mkdir ~/.tmux/
+git clone https://github.com/tmux-plugins/tpm ~/dotfiles/home/tmux/plugins/tpm
+
 ln -sf ~/dotfiles/diff-so-fancy/diff-so-fancy ~/dotfiles/bin/diff-so-fancy
 
 ln -sf ~/dotfiles/home/dotbin/tmuxinator.zsh ~/.bin/tmuxinator.zsh
