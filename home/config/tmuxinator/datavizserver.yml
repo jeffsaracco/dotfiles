@@ -1,0 +1,15 @@
+# /Users/jeffsaracco/.config/tmuxinator/datavizserver.yml
+
+name: datavizserver
+root: ~/go/src/github.com/github/datavizserver
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -
