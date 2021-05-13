@@ -99,15 +99,9 @@ Plug 'juvenn/mustache.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go'] }
 Plug 'sheerun/vim-polyglot'
 
-Plug 'dense-analysis/ale'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'kabouzeid/nvim-lspinstall'
 
 "
 " Development Tool Integration
