@@ -5,7 +5,6 @@ set ignorecase
 lua << EOF
 local actions = require('telescope.actions')
 local ts = require("telescope")
-ts.load_extension("frecency")
 ts.setup{
   defaults = {
     mappings = {
@@ -21,6 +20,8 @@ ts.setup{
       '--line-number',
       '--column',
       '--smart-case',
+      '--glob',
+      "!.git/*"
     },
     selection_strategy = "reset",
     sorting_strategy = "ascending",
@@ -28,7 +29,6 @@ ts.setup{
     prompt_prefix = "> ",
     layout_strategy = "horizontal",
     file_ignore_patterns = {
-      ".git/*",
       "vendor/*",
       "bin/*",
       "modabin/*"
@@ -42,12 +42,16 @@ ts.setup{
   extensions = {
     frecency = {
       show_scores = true,
-      show_unindexed = true,
-      ignore_patterns = {"*.git/*", "*/tmp/*", "*/vendor/*"},
-      workspaces = { }
+      show_unindexed = false,
+      ignore_patterns = {"vendor/*", "tmp/*"},
+      workspaces = { 
+        ["conf"]    = "/Users/jeffsaracco/.config",
+        ["data"]    = "/Users/jeffsaracco/.local/share",
+      }
     }
   },
 }
+ts.load_extension("frecency")
 
 local with_preview = {
   winblend = 10,
@@ -63,6 +67,8 @@ local with_preview = {
     "--files", 
     "--no-ignore",
     "--ignore-case",
+    '--glob',
+    "!.git/*"
   }
 }
 
