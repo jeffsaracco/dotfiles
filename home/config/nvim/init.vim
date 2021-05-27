@@ -101,7 +101,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "
 " Development Tool Integration
