@@ -75,7 +75,7 @@ Plug 'vim-scripts/regreplop.vim' " This is for ctrl-K replacing
 Plug 'danilamihailov/beacon.nvim' "Shows the cursor location with a blink after jumping
 Plug 'glepnir/dashboard-nvim'
 
-Plug 'liuchengxu/vim-which-key'
+Plug 'folke/which-key.nvim'
 
 "
 " Searching
@@ -131,4 +131,4 @@ runtime! init/**.vim
 
 filetype on
 
-set timeoutlen=250
+set timeoutlen=20
