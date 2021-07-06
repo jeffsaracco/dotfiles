@@ -3,7 +3,7 @@
 
 let mapleader = ","
 let maplocalleader = ";"
-nnoremap <silent> <leader><leader> :WhichKey ','<CR>
+nnoremap <silent> <localleader><localleader> :WhichKey<CR>
 
 " Gracefully handle holding shift too long after : for common commands
 cabbrev W w
