@@ -117,6 +117,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb' "GitHub extension for fugitive
 Plug 'kdheepak/lazygit.nvim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
 Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
