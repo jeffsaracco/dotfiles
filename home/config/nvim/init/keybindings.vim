@@ -3,6 +3,7 @@
 
 let mapleader = ","
 let maplocalleader = ";"
+nnoremap <silent> <leader><leader> :WhichKey ','<CR>
 
 " Gracefully handle holding shift too long after : for common commands
 cabbrev W w
@@ -71,3 +72,5 @@ map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%"
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 
 nmap <leader>rp :RainbowParenthesesToggle<CR>
+
+nnoremap <silent> <Leader>tc :Colors<CR>
