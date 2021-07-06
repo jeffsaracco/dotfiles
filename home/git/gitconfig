@@ -25,11 +25,6 @@
   interactive = auto
   status = auto
   ui = auto
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [commit]
   gpgsign = true
 [core]
@@ -41,3 +36,8 @@
   rebase = true
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

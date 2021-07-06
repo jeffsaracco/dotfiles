@@ -6,6 +6,7 @@ let g:fzf_mru_relative = 1
 let g:fzf_mru_no_sort = 1
 
 nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fh :History<cr>
 nnoremap <c-p> :FZFMru<CR>
 nnoremap <leader>fb :BCommits<cr>
 

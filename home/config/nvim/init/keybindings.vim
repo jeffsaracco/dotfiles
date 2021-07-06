@@ -52,8 +52,9 @@ nnoremap <C-y>  3<C-y>
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-" Git blame
+" Git
 map <leader>g   :Git blame<CR>
+nnoremap <silent> <leader>lg :LazyGit<CR>
 
 " Comment/uncomment lines
 map <leader>/   <plug>NERDCommenterToggle

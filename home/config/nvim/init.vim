@@ -36,7 +36,6 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'chuling/ci_dark'
-Plug 'luochen1990/rainbow'
 
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -74,15 +73,13 @@ Plug 'tpope/vim-projectionist' " this is for :AV
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'vim-scripts/regreplop.vim' " This is for ctrl-K replacing
 Plug 'danilamihailov/beacon.nvim' "Shows the cursor location with a blink after jumping
+Plug 'glepnir/dashboard-nvim'
 
 "
 " Searching
 "
 Plug 'tpope/vim-abolish' " For searching with :S vs :s
 Plug 'henrik/vim-qargs'
-
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -107,8 +104,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'hrsh7th/vim-vsnip'
+Plug 'p00f/nvim-ts-rainbow'
 
 "
 " Development Tool Integration
@@ -116,7 +115,8 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb' "GitHub extension for fugitive
-" Plug 'airblade/vim-gitgutter'
+Plug 'kdheepak/lazygit.nvim'
+
 Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
