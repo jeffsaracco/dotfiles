@@ -45,7 +45,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 "
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }
-Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
 Plug 'ecomba/vim-ruby-refactoring', { 'for': ['ruby'] }
 Plug 'tpope/vim-rake', { 'for': ['ruby'] }
 Plug 'benmills/vimux', { 'for': ['ruby'] }
