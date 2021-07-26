@@ -76,6 +76,7 @@ Plug 'danilamihailov/beacon.nvim' "Shows the cursor location with a blink after 
 Plug 'glepnir/dashboard-nvim'
 
 Plug 'folke/which-key.nvim'
+Plug 'rhysd/committia.vim'
 
 "
 " Searching
