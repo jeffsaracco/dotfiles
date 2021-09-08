@@ -19,16 +19,23 @@ ln -sf ~/dotfiles/home/hyper.js ~/.hyper.js
 mkdir ~/.tmux/
 git clone https://github.com/tmux-plugins/tpm ~/dotfiles/home/tmux/plugins/tpm
 
-ln -sf ~/dotfiles/diff-so-fancy/diff-so-fancy ~/dotfiles/bin/diff-so-fancy
-
 ln -sf ~/dotfiles/home/dotbin/tmuxinator.zsh ~/.bin/tmuxinator.zsh
 ln -sf ~/dotfiles/home/p10k.zsh ~/.p10k.zsh
 
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# If we're on a Mac, let's install and setup homebrew.
+if [ "$(uname -s)" == "Darwin" ]
+then
+  info "installing dependencies"
 
-cargo install exa
-cargo install --locked bat
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew bundle
 
-# Install FZF extensions
-$(brew --prefix)/opt/fzf/install
+  # Install FZF extensions
+  $(brew --prefix)/opt/fzf/install
+fi
+
+# zsh
+if [ "$SHELL" != "/usr/bin/zsh" ]; then
+  sudo apt install -y zsh
+  zsh
+fi;
