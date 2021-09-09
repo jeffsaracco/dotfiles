@@ -38,7 +38,9 @@
             "~/.p10k.zsh": "home/p10k.zsh",
             "~/.tmux.conf": "home/tmux/tmux.conf",
             "~/.zshrc": "home/zsh/zshrc",
-            "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm"
+            "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
+            "~/.oh-my-zsh/custom/plugins": "home/zsh/oh-my-zsh/custom/plugins",
+            "~/.oh-my-zsh/custom/themes": "home/zsh/oh-my-zsh/custom/themes"
         }
     },
     {
@@ -56,18 +58,6 @@
             [
                 "ZSH= sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"",
                 "installing oh-my-zsh"
-            ],
-            [
-                "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k",
-                "installing p10k"
-            ],
-            [
-                "cd ~/.oh-my-zsh && git submodule add -f https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions",
-                "Installing zsh-autosuggestions"
-            ],
-            [
-                "cd ~/.oh-my-zsh && git submodule add -f https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting",
-                "installing zsh syntax highlighting"
             ]
         ]
     }
