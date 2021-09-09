@@ -4,17 +4,17 @@
 	branch = master
 [submodule "dotbot"]
 	path = dotbot
-	url = https://github.com/anishathalye/dotbot
+	url = git@github.com:anishathalye/dotbot.git
 	ignore = dirty
 [submodule "home/tmux/plugins/tpm"]
 	path = home/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
 [submodule "home/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = home/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 [submodule "home/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = home/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
 [submodule "home/zsh/oh-my-zsh/custom/themes/powerlevel10k"]
 	path = home/zsh/oh-my-zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+	url = git@github.com:romkatv/powerlevel10k.git
