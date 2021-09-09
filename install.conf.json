@@ -1,0 +1,73 @@
+[
+    {
+        "defaults": {
+            "link": {
+                "relink": true,
+                "create": true,
+                "force": true
+            }
+        }
+    },
+    {
+        "clean": [
+            "~"
+        ]
+    },
+    {
+        "link": {
+            "~/.bin/tmuxinator.zsh": {
+                "create": true,
+                "path": "~/dotfiles/home/dotbin/tmuxinator.zsh"
+            },
+            "~/.config/alacritty": {
+                "create": true,
+                "path": "~/dotfiles/home/config/alacritty"
+            },
+            "~/.config/nvim": {
+                "create": true,
+                "path": "~/dotfiles/home/config/nvim"
+            },
+            "~/.config/tmuxinator": {
+                "create": true,
+                "path": "~/dotfiles/home/config/tmuxinator"
+            },
+            "~/.gitconfig": "~/dotfiles/home/git/gitconfig",
+            "~/.gitignore_global": "~/dotfiles/home/git/gitignore_global",
+            "~/.hyper.js": "~/dotfiles/home/hyper.js",
+            "~/.noti.yaml": "~/dotfiles/home/noti/noti.yml",
+            "~/.p10k.zsh": "~/dotfiles/home/p10k.zsh",
+            "~/.tmux.conf": "~/dotfiles/home/tmux/tmux.conf",
+            "~/.zshrc": "~/dotfiles/home/zsh/zshrc"
+        }
+    },
+    {
+        "create": [
+            "~/workspace",
+            "~/.tmux/"
+        ]
+    },
+    {
+        "shell": [
+            [
+                "git submodule update --init --recursive",
+                "Installing submodules"
+            ],
+            [
+                "ZSH= sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"",
+                "installing oh-my-zsh"
+            ],
+            [
+                "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k",
+                "installing p10k"
+            ],
+            [
+                "cd ~/.oh-my-zsh && git submodule add -f https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions",
+                "Installing zsh-autosuggestions"
+            ],
+            [
+                "cd ~/.oh-my-zsh && git submodule add -f https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting",
+                "installing zsh syntax highlighting"
+            ]
+        ]
+    }
+]

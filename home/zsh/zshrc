@@ -64,7 +64,6 @@ plugins=(
   npm
   zsh-autosuggestions
   zsh-syntax-highlighting
-  k
 )
 
 # User configuration
