@@ -40,7 +40,7 @@
             "~/.zshrc": "home/zsh/zshrc",
             "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
             "~/.oh-my-zsh/custom/plugins": "home/zsh/oh-my-zsh/custom/plugins",
-            "~/.oh-my-zsh/custom/themes": "home/zsh/oh-my-zsh/custom/themes"
+            "~/.oh-my-zsh/themes/powerlevel10k": "home/zsh/oh-my-zsh/custom/themes/powerlevel10k"
         }
     },
     {
