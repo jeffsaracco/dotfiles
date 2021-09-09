@@ -11,10 +11,10 @@
 	url = https://github.com/tmux-plugins/tpm
 [submodule "home/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = home/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "home/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = home/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "home/zsh/oh-my-zsh/custom/themes/powerlevel10k"]
 	path = home/zsh/oh-my-zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k
