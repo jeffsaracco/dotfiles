@@ -160,8 +160,14 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:
 export PATH=$PATH:~/dotfiles/bin:
 export PATH="$HOME/bin:$PATH"
 export GPG_TTY=$(tty)
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
+if [[ ! -f nodenv ]]
+then
+  eval "$(nodenv init -)"
+fi
+if [[ ! -f rbenv ]]
+then
+  eval "$(rbenv init -)"
+fi
 
 export GOPATH=$HOME/go
 export GOPRIVATE=github.com/github
