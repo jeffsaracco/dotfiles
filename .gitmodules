@@ -2,13 +2,10 @@
 	path = diff-so-fancy
 	url = git@github.com:so-fancy/diff-so-fancy.git
 	branch = master
-[submodule "home/ohmyzsh/custom/plugins/k"]
-	path = home/ohmyzsh/custom/plugins/k
-	url = https://github.com/supercrabtree/k
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "/Users/jeffsaracco/dotfiles/home/tmux/plugins/tpm"]
-	path = /Users/jeffsaracco/dotfiles/home/tmux/plugins/tpm
+[submodule "home/tmux/plugins/tpm"]
+	path = home/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm

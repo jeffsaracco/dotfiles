@@ -37,7 +37,8 @@
             "~/.noti.yaml": "home/noti/noti.yml",
             "~/.p10k.zsh": "home/p10k.zsh",
             "~/.tmux.conf": "home/tmux/tmux.conf",
-            "~/.zshrc": "home/zsh/zshrc"
+            "~/.zshrc": "home/zsh/zshrc",
+            "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm"
         }
     },
     {
