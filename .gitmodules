@@ -5,3 +5,10 @@
 [submodule "home/ohmyzsh/custom/plugins/k"]
 	path = home/ohmyzsh/custom/plugins/k
 	url = https://github.com/supercrabtree/k
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "/Users/jeffsaracco/dotfiles/home/tmux/plugins/tpm"]
+	path = /Users/jeffsaracco/dotfiles/home/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
