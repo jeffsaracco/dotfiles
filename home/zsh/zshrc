@@ -7,8 +7,7 @@ export ZSH=/$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="dallas"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="gentoo"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -137,9 +136,17 @@ alias testchanges='bin/tt $(git status --porcelain | grep test/ | awk \{print\ \
 alias opr='hub pull-request -o'
 alias orepo='hub browse'
 
-alias ls='exa'
-alias ll='ls -lagmh --all --git'
-alias cat='bat'
+if [[ -f exa ]]
+then
+  alias ls='exa'
+  alias ll='ls -lagmh --all --git'
+else
+  alias ll='ls -lAGFp'
+fi
+if [[ -f bat ]]
+then
+  alias cat='bat'
+fi
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias top="sudo htop" # alias top and fix high sierra bug
@@ -160,11 +167,11 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:
 export PATH=$PATH:~/dotfiles/bin:
 export PATH="$HOME/bin:$PATH"
 export GPG_TTY=$(tty)
-if [[ ! -f nodenv ]]
+if [[ -f nodenv ]]
 then
   eval "$(nodenv init -)"
 fi
-if [[ ! -f rbenv ]]
+if [[ -f rbenv ]]
 then
   eval "$(rbenv init -)"
 fi
@@ -180,15 +187,5 @@ export DISABLE_AUTO_TITLE=true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="/usr/local/opt/go@1.13/bin:$PATH"
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/opt/go/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
