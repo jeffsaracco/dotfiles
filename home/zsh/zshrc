@@ -53,7 +53,6 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  git-prompt
   bundler
   osx
   rake
@@ -137,24 +136,26 @@ alias testchanges='bin/tt $(git status --porcelain | grep test/ | awk \{print\ \
 alias opr='hub pull-request -o'
 alias orepo='hub browse'
 
-if [[ -f exa ]]
+if command -v exa &> /dev/null
 then
   alias ls='exa'
   alias ll='ls -lagmh --all --git'
 else
   alias ll='ls -lAGFp'
 fi
-if [[ -f bat ]]
+
+if command -v bat &> /dev/null
 then
   alias cat='bat'
 fi
+
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias top="sudo htop" # alias top and fix high sierra bug
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help='tldr'
 
-if [[ -f hub ]]
+if command -v hub &> /dev/null
 then
   eval "$(hub alias -s)"
 fi
@@ -168,11 +169,12 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:
 export PATH=$PATH:~/dotfiles/bin:
 export PATH="$HOME/bin:$PATH"
 export GPG_TTY=$(tty)
-if [[ -f nodenv ]]
+if command -v nodenv &> /dev/null
 then
   eval "$(nodenv init -)"
 fi
-if [[ -f rbenv ]]
+
+if command -v rbenv &> /dev/null
 then
   eval "$(rbenv init -)"
 fi
