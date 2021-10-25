@@ -50,6 +50,3 @@ autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 " Declarations
 autocmd FileType go nmap <leader>d :GoDecls<CR>
 autocmd FileType go nmap <leader>D :GoDeclsDir<CR>
-
-" Autocomplete close preview
-" set completeopt-=preview

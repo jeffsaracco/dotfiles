@@ -15,6 +15,9 @@
 
 set nocompatible               " be iMproved
 filetype off
+if has("autocmd")
+  filetype indent plugin on
+endif
 
 augroup vimrc
   if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -76,6 +79,7 @@ Plug 'glepnir/dashboard-nvim'
 
 Plug 'folke/which-key.nvim'
 Plug 'rhysd/committia.vim'
+Plug 'github/copilot.vim'
 
 "
 " Searching
@@ -87,7 +91,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
-Plug 'jremmen/vim-ripgrep'
+" Plug 'jremmen/vim-ripgrep'
+Plug 'tacahiroy/vim-ripgrep', { 'branch': 'fix-e1208' }
 Plug 'google/vim-searchindex'
 
 "
@@ -104,11 +109,17 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go'] }
 Plug 'sheerun/vim-polyglot'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-Plug 'hrsh7th/nvim-compe'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'tami5/lspsaga.nvim'
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 
 "
