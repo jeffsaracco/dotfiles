@@ -12,6 +12,11 @@ lua <<EOF
 
     -- Mappings.
     local opts = { noremap=true, silent=true }
+
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+
   end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -64,7 +64,7 @@ nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
 
 " -- preview definition
 nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 
 " Float Term
