@@ -64,7 +64,7 @@ npm install -g \
 echo "Neovim LSP packages installed"
 
 # Install vim plugins
-/usr/local/bin/nvim -es -u ./workspaces/.codespaces/.persistedshare/dotfiles/home/config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
+/usr/local/bin/nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
 
 # Update path after installing latest node
 PATH="$PATH"
