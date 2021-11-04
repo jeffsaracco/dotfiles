@@ -9,7 +9,12 @@ sudo chsh -s /usr/bin/zsh
 sudo apt-get install -y libfuse2
 
 sudo apt install fuse -y
-sudo groupadd fuse
+if [ $(getent group fuse) ]; then
+  echo "fuse group exists. not creating"
+else
+  echo "group does not exist."
+  sudo groupadd fuse
+fi
 user="$(whoami)"
 sudo usermod -a -G fuse $user
 
@@ -48,7 +53,7 @@ npm install -g npm@latest
 echo "NPM updated"
 
 # Start using latest node version
-n latest
+sudo n latest
 echo "NPM using latest"
 
 # Install neovim LSP packages
