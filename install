@@ -17,20 +17,7 @@ wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
-# Update node to a decent version
-curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-sudo apt-get install -y nodejs
-
-# Update npm
-npm install -g npm@latest
-
-# Start using latest node version
-n latest
-
-# Install neovim LSP packages
-npm install -g \
-  typescript-language-server \
-  vscode-langservers-extracted
+echo "Neovim installed"
 
 # Use dotbot for the dotfiles
 CONFIG="install.conf.json"
@@ -44,6 +31,30 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+echo "dotbot ran"
+
+# Update node to a decent version
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+sudo apt-get install -y nodejs
+
+echo "Node installed"
+
+# Update npm
+npm install -g npm@latest
+
+echo "NPM updated"
+
+# Start using latest node version
+n latest
+echo "NPM using latest"
+
+# Install neovim LSP packages
+npm install -g \
+  typescript-language-server \
+  vscode-langservers-extracted
+
+echo "Neovim LSP packages installed"
 
 # Install vim plugins
 /usr/local/bin/nvim +'PlugInstall --sync' +qa
