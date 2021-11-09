@@ -54,7 +54,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   bundler
-  osx
+  macos
   rake
   ruby
   brew
