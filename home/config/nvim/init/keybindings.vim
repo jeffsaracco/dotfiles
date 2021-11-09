@@ -36,7 +36,7 @@ nmap <C-h>      <C-w>h
 nmap <C-l>      <C-w>l
 
 " Reload .vimrc
-map <leader>rv  :source ~/.vimrc<CR>
+map <leader>rv  :source $MYVIMRC<CR>
 
 " Auto-indent whole file
 nmap <leader>=  gg=G``
@@ -58,7 +58,7 @@ map <leader>g   :Git blame<CR>
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
 " Comment/uncomment lines
-map <leader>/   <plug>NERDCommenterToggle
+" map <leader>/   <plug>NERDCommenterToggle
 
 " In command-line mode, <C-A> should go to the front of the line, as in bash.
 cmap <C-A> <C-B>

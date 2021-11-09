@@ -14,6 +14,7 @@
 " Instead, add it to one of the files in .vim/init, or create a new one.
 
 set nocompatible               " be iMproved
+let g:loaded_matchit = 1 " force disable matchit
 filetype off
 if has("autocmd")
   filetype indent plugin on
@@ -31,9 +32,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+
 call plug#begin('~/.config/.nvim/plugged')
 
 Plug 'tweekmonster/startuptime.vim', { 'on': ['StartupTime'] }
+Plug 'lewis6991/impatient.nvim'
 "
 " Colorschemes
 "
@@ -65,15 +68,14 @@ Plug 'kana/vim-textobj-user', { 'for': ['ruby'] }
 Plug 'Julian/vim-textobj-variable-segment', { 'for': ['ruby'] }
 Plug 'kana/vim-textobj-line', { 'for': ['ruby'] }
 Plug 'thinca/vim-textobj-between', { 'for': ['ruby'] }
-Plug 'vim-scripts/matchit.zip'
 
 "
 " General Editing
 "
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdcommenter'
 Plug 'matt-royal/diffthese'
+Plug 'b3nj5m1n/kommentary'
 Plug 'Peeja/vim-cdo'
 Plug 'tpope/vim-projectionist' " this is for :AV
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -108,9 +110,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeFind', 'NERDTreeClose', 'N
 "
 " Languages
 "
+Plug 'nathom/filetype.nvim'
 Plug 'juvenn/mustache.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go'] }
-Plug 'sheerun/vim-polyglot'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -121,9 +123,16 @@ Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 Plug 'L3MON4D3/LuaSnip'
 Plug 'tami5/lspsaga.nvim'
 
+"
+" Tree Sitter
+"
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'nvim-treesitter/playground'
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'andymass/vim-matchup'
 
 "
 " Development Tool Integration
@@ -138,6 +147,8 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
+
+lua require('impatient')
 
 syntax on
 
