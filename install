@@ -2,6 +2,8 @@
 
 set -e
 
+./install-oh-my-zsh.sh
+
 # Set ZSH as default shell
 sudo chsh -s /usr/bin/zsh
 
