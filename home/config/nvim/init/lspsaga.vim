@@ -46,6 +46,7 @@ EOF
 nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 nnoremap <silent> gx :Lspsaga code_action<cr>
 xnoremap <silent> gx :Lspsaga range_code_action<cr>
+nnoremap <silent> gl <cmd>lua vim.diagnostic.open_float()<CR>
 
 " Hover doc
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
