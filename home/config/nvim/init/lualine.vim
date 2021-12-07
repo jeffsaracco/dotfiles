@@ -26,7 +26,7 @@ inactive_sections = {
     lualine_y = {  },
     lualine_z = {  },
     },
-extensions = { 'fzf', 'fugitive', 'nerdtree' },
+extensions = { 'fzf', 'fugitive'},
 }
 require("lualine").setup(opts)
 EOF

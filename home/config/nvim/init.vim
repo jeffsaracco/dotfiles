@@ -104,8 +104,7 @@ Plug 'google/vim-searchindex'
 "
 " Navigation
 "
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeClose', 'NERDTreeToggle', 'NERDTreeRefreshRoot'] }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeFind', 'NERDTreeClose', 'NERDTreeToggle', 'NERDTreeRefreshRoot'] }
+Plug 'kyazdani42/nvim-tree.lua'
 
 "
 " Languages
