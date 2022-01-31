@@ -192,3 +192,4 @@ export DISABLE_AUTO_TITLE=true
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/go/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"

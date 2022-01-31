@@ -81,7 +81,7 @@ Plug 'tpope/vim-projectionist' " this is for :AV
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'vim-scripts/regreplop.vim' " This is for ctrl-K replacing
 Plug 'danilamihailov/beacon.nvim' "Shows the cursor location with a blink after jumping
-Plug 'glepnir/dashboard-nvim'
+Plug 'mhinz/vim-startify'
 
 Plug 'folke/which-key.nvim'
 Plug 'rhysd/committia.vim'
@@ -129,7 +129,6 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/playground'
-Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'andymass/vim-matchup'
 

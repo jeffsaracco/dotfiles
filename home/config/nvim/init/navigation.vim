@@ -30,9 +30,10 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 local list = {
   { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
   { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
-  { key = "s",                        cb = tree_cb("vsplit") },
-  { key = "i",                        cb = tree_cb("split") },
-  { key = "T",                        cb = tree_cb("tabnew") },
+  { key = "s",                            cb = tree_cb("vsplit") },
+  { key = "i",                            cb = tree_cb("split") },
+  { key = "T",                            cb = tree_cb("tabnew") },
+  { key = "t",                            cb = tree_cb("tabnew") },
   { key = "<",                            cb = tree_cb("prev_sibling") },
   { key = ">",                            cb = tree_cb("next_sibling") },
   { key = "P",                            cb = tree_cb("parent_node") },
@@ -68,7 +69,7 @@ require'nvim-tree'.setup {
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
   auto_close          = false,
-  open_on_tab         = false,
+  open_on_tab         = true,
   hijack_cursor       = false,
   update_cwd          = false,
   update_to_buf_dir   = {
@@ -76,7 +77,7 @@ require'nvim-tree'.setup {
     auto_open = true,
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     icons = {
       hint = "",
       info = "",

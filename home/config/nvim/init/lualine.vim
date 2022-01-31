@@ -11,7 +11,7 @@ opts = {
         lualine_b = {{'branch', icon= ''}},
         lualine_c = { 
             {'filename', file_status = true, full_path = true, shorten = true},
-            {'diagnostics', sources = { 'ale', 'nvim_diagnostic' },  color_info = '#ffffff', color_error = '#ff0000', color_warn = 'fff000'},
+            {'diagnostics', sources = { 'nvim_diagnostic' },  color_info = '#ffffff', color_error = '#ff0000', color_warn = 'fff000'},
             {'diff', color_added = '#27e000', color_modified = '#fff000', color_deleted = '#ffffff'},
         },
     lualine_x = { 'location' },
