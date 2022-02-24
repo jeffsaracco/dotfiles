@@ -96,8 +96,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
-" Plug 'jremmen/vim-ripgrep'
-Plug 'tacahiroy/vim-ripgrep', { 'branch': 'fix-e1208' }
+Plug 'jremmen/vim-ripgrep'
 Plug 'google/vim-searchindex'
 
 "
