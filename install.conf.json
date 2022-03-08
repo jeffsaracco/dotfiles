@@ -19,6 +19,10 @@
                 "create": true,
                 "path": "home/dotbin/tmuxinator.zsh"
             },
+            "~/.grc": {
+                "create": true,
+                "path": "home/dotgrc"
+            },
             "~/.config/alacritty": {
                 "create": true,
                 "path": "home/config/alacritty"
