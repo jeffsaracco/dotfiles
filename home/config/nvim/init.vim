@@ -111,14 +111,23 @@ Plug 'nathom/filetype.nvim'
 Plug 'juvenn/mustache.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go'] }
 
+" LSP Support
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+
+" Autocompletion
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
+Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+
+"  Snippets
 Plug 'L3MON4D3/LuaSnip'
-Plug 'tami5/lspsaga.nvim'
+Plug 'rafamadriz/friendly-snippets'
+
+Plug 'VonHeikemen/lsp-zero.nvim'
 
 "
 " Tree Sitter
