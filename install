@@ -84,6 +84,10 @@ sudo chsh -s $(which zsh) vscode
 
 if [ "$CODESPACES" = "true" ]; then
   sudo apt install fd-find
-  ln -s $(which fdfind) ~/.local/bin/fd
+
+  sudo apt install ruby-dev
+  sudo gem install solargraph
+
+
   sudo chsh -s /usr/bin/zsh
 fi
