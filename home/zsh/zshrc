@@ -89,6 +89,10 @@ export EDITOR='nvim'
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 export FZF_DEFAULT_COMMAND='fd --type f'
+
+if [ "$CODESPACES" = "true" ]; then
+export FZF_DEFAULT_COMMAND='fnd --type f'
+fi
 export FZF_DEFAULT_OPTS="--color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54 --layout=reverse --margin=2,5"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
 
@@ -135,6 +139,9 @@ alias work='cd ~/workspace'
 alias testchanges='bin/tt $(git status --porcelain | grep test/ | awk \{print\ \$2\})'
 alias opr='hub pull-request -o'
 alias orepo='hub browse'
+if [ "$CODESPACES" = "true" ]; then
+  alias fnd='\fd'
+fi
 
 if command -v exa &> /dev/null
 then
