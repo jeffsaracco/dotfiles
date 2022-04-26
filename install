@@ -50,10 +50,10 @@ sudo apt-get install -y nodejs ripgrep
 
 echo "Node installed"
 
-npm install -g n
+sudo npm install -g n
 
 # Update npm
-npm install -g npm@latest
+sudo npm install -g npm@latest
 
 echo "NPM updated"
 
@@ -65,7 +65,7 @@ echo "NPM using latest"
 PATH="$PATH"
 
 # Install neovim LSP packages
-npm install -g \
+sudo npm install -g \
   typescript-language-server \
   vscode-langservers-extracted
 
