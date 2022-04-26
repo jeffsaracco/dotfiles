@@ -80,4 +80,4 @@ echo "Installing vim plugins"
 echo $?
 
 # Set ZSH as default shell
-sudo chsh -s /usr/bin/zsh
+sudo chsh -s $(which zsh) vscode
