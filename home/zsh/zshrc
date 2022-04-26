@@ -140,7 +140,7 @@ alias testchanges='bin/tt $(git status --porcelain | grep test/ | awk \{print\ \
 alias opr='hub pull-request -o'
 alias orepo='hub browse'
 if [ "$CODESPACES" = "true" ]; then
-  alias fnd='\fd'
+  alias fnd='\fdfind'
 fi
 
 if command -v exa &> /dev/null
