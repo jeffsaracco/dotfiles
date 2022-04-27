@@ -2,7 +2,7 @@
 
 set -e
 
-if [ "$CODESPACES" = "true" ]; then
+if [[ "$CODESPACES" = "true" ]]; then
   sudo apt install fd-find
 
   sudo apt install ruby-dev
