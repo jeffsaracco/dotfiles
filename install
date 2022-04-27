@@ -4,9 +4,6 @@ set -e
 
 ./script/install-oh-my-zsh.sh
 
-# Set ZSH as default shell
-sudo chsh -s /usr/bin/zsh
-
 # Install fzf
 sudo apt-get install fzf
 
@@ -22,17 +19,6 @@ else
 fi
 user="$(whoami)"
 sudo usermod -a -G fuse $user
-
-./script/brewstrap.sh
-
-if [ ! -f "/usr/local/bin/nvim" ]; then
-  wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-  chmod u+x nvim.appimage
-  sudo mv nvim.appimage /usr/local/bin/nvim
-
-  echo "Neovim installed"
-fi
-
 # Use dotbot for the dotfiles
 CONFIG="install.conf.json"
 DOTBOT_DIR="dotbot"
@@ -46,24 +32,43 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
+echo
 echo "dotbot ran"
+echo
+
+./script/brewstrap.sh
+
+if [ ! -f "/usr/local/bin/nvim" ]; then
+  wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  chmod u+x nvim.appimage
+  sudo mv nvim.appimage /usr/local/bin/nvim
+
+  echo "Neovim installed"
+fi
+
 
 # Update node to a decent version
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
 sudo apt-get install -y nodejs ripgrep
 
+echo
 echo "Node installed"
+echo
 
 sudo npm install -g n
 
 # Update npm
 sudo npm install -g npm@latest
 
+echo
 echo "NPM updated"
+echo
 
 # Start using latest node version
 sudo n latest
+echo
 echo "NPM using latest"
+echo
 
 # Update path after installing latest node
 PATH="$PATH"
@@ -73,15 +78,17 @@ sudo npm install -g \
   typescript-language-server \
   vscode-langservers-extracted
 
+echo
 echo "Neovim LSP packages installed"
+echo
 
 echo $?
 
 # Install vim plugins
+echo
 echo "Installing vim plugins"
+echo
 /usr/local/bin/nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
-
-echo $?
 
 # Set ZSH as default shell
 sudo chsh -s $(which zsh) $(whoami)
