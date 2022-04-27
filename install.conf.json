@@ -43,7 +43,8 @@
             "~/.oh-my-zsh/custom/aliases.zsh": "home/zsh/oh-my-zsh/custom/aliases.zsh",
             "~/.tmux.conf": "home/tmux/tmux.conf",
             "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
-            "~/.zshrc": "home/zsh/zshrc"
+            "~/.zshrc": "home/zsh/zshrc",
+            "~/Brewfile": "Brewfile"
         }
     },
     {

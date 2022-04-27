@@ -2,7 +2,7 @@
 
 set -e
 
-BREWFILE=../Brewfile
+BREWFILE=~/Brewfile
 
 OS="$(uname -s)"
 
