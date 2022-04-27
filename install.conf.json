@@ -1,64 +1,64 @@
 [
-    {
-        "defaults": {
-            "link": {
-                "create": true,
-                "force": true,
-                "relink": true
-            }
-        }
-    },
-    {
-        "clean": [
-            "~"
-        ]
-    },
-    {
-        "link": {
-            "~/.bin/tmuxinator.zsh": {
-                "create": true,
-                "path": "home/dotbin/tmuxinator.zsh"
-            },
-            "~/.grc": {
-                "create": true,
-                "path": "home/dotgrc"
-            },
-            "~/.config/alacritty": {
-                "create": true,
-                "path": "home/config/alacritty"
-            },
-            "~/.config/nvim": {
-                "create": true,
-                "path": "home/config/nvim"
-            },
-            "~/.config/tmuxinator": {
-                "create": true,
-                "path": "home/config/tmuxinator"
-            },
-            "~/.gitconfig": "home/git/gitconfig",
-            "~/.gitignore_global": "home/git/gitignore_global",
-            "~/.hyper.js": "home/hyper.js",
-            "~/.noti.yaml": "home/noti/noti.yml",
-            "~/.oh-my-zsh/custom/plugins": "home/zsh/oh-my-zsh/custom/plugins",
-            "~/.oh-my-zsh/custom/aliases.zsh": "home/zsh/oh-my-zsh/custom/aliases.zsh",
-            "~/.tmux.conf": "home/tmux/tmux.conf",
-            "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
-            "~/.zshrc": "home/zsh/zshrc",
-            "~/Brewfile": "Brewfile"
-        }
-    },
-    {
-        "create": [
-            "~/workspace",
-            "~/.tmux/"
-        ]
-    },
-    {
-        "shell": [
-            [
-                "git submodule update --init --recursive",
-                "Installing submodules"
-            ]
-        ]
+  {
+    "defaults": {
+      "link": {
+        "create": true,
+        "force": true,
+        "relink": true
+      }
     }
+  },
+  {
+    "clean": [
+      "~"
+    ]
+  },
+  {
+    "link": {
+      "~/.bin/tmuxinator.zsh": {
+        "create": true,
+        "path": "home/dotbin/tmuxinator.zsh"
+      },
+      "~/.grc": {
+        "create": true,
+        "path": "home/dotgrc"
+      },
+      "~/.config/alacritty": {
+        "create": true,
+        "path": "home/config/alacritty"
+      },
+      "~/.config/nvim": {
+        "create": true,
+        "path": "home/config/nvim"
+      },
+      "~/.config/tmuxinator": {
+        "create": true,
+        "path": "home/config/tmuxinator"
+      },
+      "~/.gitconfig": "home/git/gitconfig",
+      "~/.gitignore_global": "home/git/gitignore_global",
+      "~/.hyper.js": "home/hyper.js",
+      "~/.noti.yaml": "home/noti/noti.yml",
+      "~/.oh-my-zsh/custom/plugins": "home/zsh/oh-my-zsh/custom/plugins",
+      "~/.oh-my-zsh/custom/aliases.zsh": "home/zsh/oh-my-zsh/custom/aliases.zsh",
+      "~/.tmux.conf": "home/tmux/tmux.conf",
+      "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
+      "~/.zshrc": "home/zsh/zshrc",
+      "~/Brewfile": "Brewfile"
+    }
+  },
+  {
+    "create": [
+      "~/workspace",
+      "~/.tmux/"
+    ]
+  },
+  {
+    "shell": [
+      [
+        "git submodule update --init --recursive",
+        "Installing submodules"
+      ]
+    ]
+  }
 ]

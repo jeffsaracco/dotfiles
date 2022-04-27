@@ -104,19 +104,14 @@ require'nvim-tree'.setup {
   },
   actions = {
     open_file = {
-      window_picker = {
-        enable = false,
-        exclude = {
-         filetype: [
-           'notify',
-           'packer',
-           'qf'
-         ],
-         buftype: [
-           'terminal'
-         ]
-       }
-
+    quit_on_open = true,
+    window_picker = {
+      enable = false,
+      chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+      exclude = {
+        filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+        buftype = { "nofile", "terminal", "help" },
+        },
       }
     }
   }
