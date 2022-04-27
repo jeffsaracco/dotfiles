@@ -2,7 +2,7 @@
 
 set -e
 
-./install-oh-my-zsh.sh
+./script/install-oh-my-zsh.sh
 
 # Set ZSH as default shell
 sudo chsh -s /usr/bin/zsh
@@ -23,11 +23,15 @@ fi
 user="$(whoami)"
 sudo usermod -a -G fuse $user
 
-wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
+./script/brewstrap.sh
 
-echo "Neovim installed"
+if [ ! -f "/usr/local/bin/nvim" ]; then
+  wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  chmod u+x nvim.appimage
+  sudo mv nvim.appimage /usr/local/bin/nvim
+
+  echo "Neovim installed"
+fi
 
 # Use dotbot for the dotfiles
 CONFIG="install.conf.json"
@@ -80,14 +84,6 @@ echo "Installing vim plugins"
 echo $?
 
 # Set ZSH as default shell
-sudo chsh -s $(which zsh) vscode
+sudo chsh -s $(which zsh) $(whoami)
 
-if [ "$CODESPACES" = "true" ]; then
-  sudo apt install fd-find
-
-  sudo apt install ruby-dev
-  sudo gem install solargraph
-
-
-  sudo chsh -s /usr/bin/zsh
-fi
+./script/codespaces-setup.sh

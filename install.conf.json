@@ -40,6 +40,7 @@
             "~/.hyper.js": "home/hyper.js",
             "~/.noti.yaml": "home/noti/noti.yml",
             "~/.oh-my-zsh/custom/plugins": "home/zsh/oh-my-zsh/custom/plugins",
+            "~/.oh-my-zsh/custom/aliases.zsh": "home/zsh/oh-my-zsh/custom/aliases.zsh",
             "~/.tmux.conf": "home/tmux/tmux.conf",
             "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
             "~/.zshrc": "home/zsh/zshrc"
