@@ -17,8 +17,7 @@ else
   echo "group does not exist."
   sudo groupadd fuse
 fi
-user="$(whoami)"
-sudo usermod -a -G fuse $user
+sudo usermod -a -G fuse ${USER}
 # Use dotbot for the dotfiles
 CONFIG="install.conf.json"
 DOTBOT_DIR="dotbot"
@@ -91,6 +90,6 @@ echo
 /usr/local/bin/nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
 
 # Set ZSH as default shell
-sudo chsh -s $(which zsh) $(whoami)
+sudo chsh -s $(which zsh) ${USER}
 
 ./script/codespaces-setup.sh

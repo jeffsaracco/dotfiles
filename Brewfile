@@ -1,4 +1,14 @@
-tap 'github/bootstrap'
+# vim: set ft=ruby:
+
+def macos?
+  RUBY_PLATFORM =~ /darwin/
+end
+
+def linux?
+  RUBY_PLATFORM =~ /linux/
+end
+
+
 tap 'heroku/brew'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
@@ -6,35 +16,22 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'neovim/neovim'
+
 brew 'autoconf'
 brew 'automake'
 brew 'bat'
 brew 'boost'
 brew 'cmake'
 brew 'coreutils'
-brew 'cowsay'
-brew 'dep'
 brew 'diff-so-fancy'
-brew 'docker', link: false
-brew 'docker-compose'
-brew 'docker-machine', link: false
-brew 'elasticsearch@2.4', restart_service: true
 brew 'exa'
 brew 'fd'
 brew 'findutils'
-brew 'fortune'
 brew 'fswatch'
 brew 'fzf'
-brew 'git'
-brew 'glide'
 brew 'gnupg'
-brew 'go'
-brew 'go@1.17', link: true
 brew 'grc'
-brew 'hadoop'
-brew 'heroku/brew/heroku'
 brew 'htop'
-brew 'hub'
 brew 'hyperscan'
 brew 'icu4c'
 brew 'imagemagick'
@@ -87,3 +84,14 @@ cask 'graphiql'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'viscosity'
+
+if macos?
+  brew 'git'
+  brew 'go'
+  brew 'go@1.17', link: true
+  brew 'hub'
+  brew 'docker', link: false
+  brew 'docker-compose'
+  brew 'docker-machine', link: false
+  brew 'elasticsearch@2.4', restart_service: true
+end
