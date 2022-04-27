@@ -12,9 +12,9 @@ then
 elif [[ "$OS" = "Linux" ]]
 then
   HOMEBREW_LOCATION=/home/linuxbrew/.linuxbrew/bin
-else
-  echo "HOMEBREW exists"
 fi
+
+echo "looking for Homebrew installed in $HOMEBREW_LOCATION"
 
 if [ ! -d "$HOMEBREW_LOCATION" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
