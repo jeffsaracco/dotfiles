@@ -55,18 +55,14 @@ brew 'nodenv'
 brew 'noti'
 brew 'openssl'
 brew 'openssl@1.1'
-brew 'phantomjs'
 brew 'pidof'
 brew 'pinentry-mac'
 brew 'pkg-config'
-brew 'postgresql', restart_service: true
-brew 'postgresql@9.5', restart_service: true
 brew 'protobuf'
 brew 'python'
 brew 'python3'
 brew 'rbenv'
 brew 'readline'
-brew 'reattach-to-user-namespace'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'ruby-build'
@@ -94,4 +90,8 @@ if macos?
   brew 'docker-compose'
   brew 'docker-machine', link: false
   brew 'elasticsearch@2.4', restart_service: true
+  brew 'phantomjs'
+  brew 'postgresql', restart_service: true
+  brew 'postgresql@9.5', restart_service: true
+  brew 'reattach-to-user-namespace'
 end
