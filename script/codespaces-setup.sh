@@ -14,4 +14,7 @@ if [[ "$CODESPACES" = "true" ]]; then
   then
     sudo chsh -s /bin/zsh ${USER}
   fi
+
+  # Make sure to use the gpg wrapper when on codespaces
+  sed -i --follow-symlinks 's/\/usr\/local\/bin\/gpg/\/.codespaces\/bin\/gh-gpgsign/g' ~/.gitconfig
 fi
