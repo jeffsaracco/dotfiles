@@ -17,7 +17,7 @@ fi
 echo "looking for Homebrew installed in $HOMEBREW_LOCATION"
 
 if [ ! -d "$HOMEBREW_LOCATION" ]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 $(HOMEBREW_LOCATION)/brew bundle install --no-lock --file $(BREWFILE)
