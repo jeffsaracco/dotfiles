@@ -6,12 +6,14 @@ BREWFILE=../Brewfile
 
 OS="$(uname -s)"
 
-if [[ "$OS" = "Darwin"]]
+if [[ "$OS" = "Darwin" ]]
 then
   HOMEBREW_LOCATION=/usr/local/bin
-elif [[ "$OS" = "Linux"]]
+elif [[ "$OS" = "Linux" ]]
 then
   HOMEBREW_LOCATION=/home/linuxbrew/.linuxbrew/bin
+else
+  echo "HOMEBREW exists"
 fi
 
 if [ ! -d "$HOMEBREW_LOCATION" ]; then
