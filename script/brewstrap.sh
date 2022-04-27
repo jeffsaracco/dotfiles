@@ -24,4 +24,4 @@ if [[ "$CODESPACES" = "true" ]]; then
   sudo apt-get install build-essential procps curl file git
 fi
 
-$(HOMEBREW_LOCATION)/brew bundle install --no-lock --file $(BREWFILE)
+$HOMEBREW_LOCATION/brew bundle install --no-lock --file $BREWFILE
