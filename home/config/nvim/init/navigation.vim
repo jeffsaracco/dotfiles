@@ -1,9 +1,3 @@
-let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
-let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
-let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
-let g:nvim_tree_respect_buf_cwd = 0 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
-let g:nvim_tree_create_in_closed_folder = 0 "1 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
 let g:nvim_tree_refresh_wait = 500 "1000 by default, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
 
 nnoremap \ :NvimTreeToggle<CR>
@@ -52,6 +46,16 @@ local list = {
 }
 
 require'nvim-tree'.setup {
+  create_in_closed_folder = false,
+  respect_buf_cwd = false,
+  renderer = {
+    highlight_opened_files = "icon",
+    highlight_git = true,
+    group_empty = true,
+    icons = {
+      symlink_arrow = " >> "
+    }
+  },
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
