@@ -78,4 +78,5 @@ echo
 # Set ZSH as default shell
 sudo chsh -s $(which zsh) ${USER}
 
+
 ./script/codespaces-setup.sh
