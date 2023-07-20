@@ -113,7 +113,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go'] }
 
 " LSP Support
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 Plug 'williamboman/mason-lspconfig.nvim'
 
 " Autocompletion
