@@ -159,3 +159,4 @@ export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 if [ "$CODESPACES" = "true" ]; then
   export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
+export PATH="/usr/local/opt/node@16/bin:$PATH"
