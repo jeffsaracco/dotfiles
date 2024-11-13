@@ -7,7 +7,6 @@ nnoremap \| :NvimTreeFindFile<CR>
 set termguicolors " this variable must be enabled for colors to be applied properly
 
 lua << EOF
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
@@ -72,6 +71,7 @@ require'nvim-tree'.setup {
     highlight_opened_files = "icon",
     highlight_git = true,
     group_empty = true,
+    root_folder_label = false,
     icons = {
       symlink_arrow = " >> "
     }
@@ -110,7 +110,6 @@ require'nvim-tree'.setup {
   },
   view = {
     width = 30,
-    hide_root_folder = false,
     side = 'left',
     number = false,
     relativenumber = false

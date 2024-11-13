@@ -8,7 +8,7 @@ OS="$(uname -s)"
 
 if [[ "$OS" = "Darwin" ]]
 then
-  HOMEBREW_LOCATION=/usr/local/bin
+  HOMEBREW_LOCATION=/opt/homebrew/bin
 elif [[ "$OS" = "Linux" ]]
 then
   HOMEBREW_LOCATION=/home/linuxbrew/.linuxbrew/bin

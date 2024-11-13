@@ -1,5 +1,4 @@
 # vim: set ft=ruby:
-
 def macos?
   RUBY_PLATFORM =~ /darwin/
 end
@@ -11,9 +10,6 @@ end
 
 tap 'heroku/brew'
 tap 'homebrew/bundle'
-tap 'homebrew/cask'
-tap 'homebrew/cask-versions'
-tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'neovim/neovim'
 
@@ -24,7 +20,6 @@ brew 'boost'
 brew 'cmake'
 brew 'coreutils'
 brew 'diff-so-fancy'
-brew 'exa'
 brew 'fd'
 brew 'findutils'
 brew 'fswatch'
@@ -45,7 +40,7 @@ brew 'libxml2'
 brew 'libyaml'
 brew 'md5sha1sum'
 brew 'memcached', restart_service: true
-brew 'mysql@5.7', restart_service: true
+brew 'mysql', restart_service: true
 brew 'ncdu'
 brew 'neovim'
 brew 'nginx', restart_service: true
@@ -54,7 +49,6 @@ brew 'node-build'
 brew 'nodenv'
 brew 'noti'
 brew 'openssl'
-brew 'openssl@1.1'
 brew 'pidof'
 brew 'pinentry-mac'
 brew 'pkg-config'
@@ -84,14 +78,10 @@ cask 'viscosity'
 if macos?
   brew 'git'
   brew 'go'
-  brew 'go@1.17', link: true
   brew 'hub'
   brew 'docker', link: false
   brew 'docker-compose'
   brew 'docker-machine', link: false
-  brew 'elasticsearch@2.4', restart_service: true
-  brew 'phantomjs'
   brew 'postgresql', restart_service: true
-  brew 'postgresql@9.5', restart_service: true
   brew 'reattach-to-user-namespace'
 end

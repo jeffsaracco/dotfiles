@@ -23,7 +23,7 @@ sudo usermod -a -G fuse ${USER}
 
 ./script/brewstrap.sh
 
-if [ ! -f "/usr/local/bin/nvim" ]; then
+if [ ! -f "/opt/homebrew/bin/nvim" ]; then
   wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
   chmod u+x nvim.appimage
   sudo mv nvim.appimage /usr/local/bin/nvim
@@ -73,7 +73,7 @@ echo $?
 echo
 echo "Installing vim plugins"
 echo
-/usr/local/bin/nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
+/opt/homebrew/bin/nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
 
 # Set ZSH as default shell
 sudo chsh -s $(which zsh) ${USER}
