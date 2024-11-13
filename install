@@ -4,20 +4,26 @@ set -e
 
 ./script/install-oh-my-zsh.sh
 
-# Install fzf
-sudo apt-get install fzf
+OS="$(uname -s)"
 
-# Debian Buster has a old version of neovim so we need to install the AppImage
-sudo apt-get install -y libfuse2
+if [[ "$OS" = "Linux" ]]
+then
+  # Install fzf
+  sudo apt-get install fzf
 
-sudo apt install fuse -y
-if [ $(getent group fuse) ]; then
-  echo "fuse group exists. not creating"
-else
-  echo "group does not exist."
-  sudo groupadd fuse
+  # Debian Buster has a old version of neovim so we need to install the AppImage
+  sudo apt-get install -y libfuse2
+
+  sudo apt install fuse -y
+  if [ $(getent group fuse) ]; then
+    echo "fuse group exists. not creating"
+  else
+    echo "group does not exist."
+    sudo groupadd fuse
+  fi
+  sudo usermod -a -G fuse ${USER}
 fi
-sudo usermod -a -G fuse ${USER}
+
 
 ./script/run-dotbot.sh
 
@@ -32,13 +38,16 @@ if [ ! -f "/opt/homebrew/bin/nvim" ]; then
 fi
 
 
-# Update node to a decent version
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
-sudo apt-get install -y nodejs ripgrep
+if [[ "$OS" = "Linux" ]]
+then
+  # Update node to a decent version
+  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
+  sudo apt-get install -y nodejs ripgrep
 
-echo
-echo "Node installed"
-echo
+  echo
+  echo "Node installed"
+  echo
+fi
 
 sudo npm install -g n
 
