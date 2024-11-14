@@ -1,12 +1,3 @@
-background_opacity = 0.98
-cursor_style = "Block"
-custom_cursor_colors = true
-dynamic_title = true
-hide_cursor_when_typing = false
-render_timer = false
-tabspaces = 8
-unfocused_hollow_cursor = true
-
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
@@ -560,9 +551,7 @@ foreground = "0xc5c8c6"
 TERM = "xterm-256color"
 
 [font]
-scale_with_dpi = true
 size = 10.0
-use_thin_strokes = true
 
 [font.bold]
 family = "Hack Nerd Font Mono"
@@ -581,15 +570,6 @@ family = "Hack Nerd Font Mono"
 [font.offset]
 x = 0
 y = 0
-
-[mouse]
-faux_scrollback_lines = 1
-
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
 
 [selection]
 semantic_escape_chars = ''',│`|:"' ()[]{}<>'''
