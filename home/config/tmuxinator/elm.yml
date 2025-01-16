@@ -1,0 +1,15 @@
+# /Users/jeffsaracco/.config/tmuxinator/elm.yml
+
+name: elm
+root: ~/go/src/github.com/github/migrations-vnext
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -
