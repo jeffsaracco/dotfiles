@@ -162,3 +162,5 @@ fi
 export PATH="/usr/local/opt/node@16/bin:$PATH"
 
 export GPG_TTY=$(tty)
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
