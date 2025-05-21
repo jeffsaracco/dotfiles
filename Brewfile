@@ -74,6 +74,7 @@ cask 'graphiql'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'viscosity'
+cask 'nikitabobko/tap/aerospace'
 
 if macos?
   brew 'git'
