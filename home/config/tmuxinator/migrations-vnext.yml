@@ -1,0 +1,15 @@
+# /Users/jeffsaracco/.config/tmuxinator/migrations-vnext.yml
+
+name: migrations-vnext
+root: ~/go/src/github.com/github/migrations-vnext
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+  - console:
+      layout: even-horizontal
+      panes:
+        -
+        -

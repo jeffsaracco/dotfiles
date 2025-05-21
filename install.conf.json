@@ -35,6 +35,10 @@
         "create": true,
         "path": "home/config/tmuxinator"
       },
+      "~/.config/aerospace": {
+        "create": true,
+        "path": "home/config/aerospace"
+      },
       "~/.gitconfig": "home/git/gitconfig",
       "~/.gitignore_global": "home/git/gitignore_global",
       "~/.hyper.js": "home/hyper.js",

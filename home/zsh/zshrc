@@ -164,3 +164,13 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 export GPG_TTY=$(tty)
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# bun completions
+[ -s "/Users/jeffsaracco/.bun/_bun" ] && source "/Users/jeffsaracco/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
