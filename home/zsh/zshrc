@@ -162,3 +162,7 @@ fi
 export PATH="/usr/local/opt/node@16/bin:$PATH"
 
 export GPG_TTY=$(tty)
+eval "$(~/.local/bin/mise activate)"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin

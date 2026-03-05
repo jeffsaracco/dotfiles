@@ -28,7 +28,7 @@ echo
 echo "Running brew bundle"
 echo
 
-$HOMEBREW_LOCATION/brew bundle install --no-lock --file $BREWFILE
+$HOMEBREW_LOCATION/brew bundle install --file $BREWFILE
 
 echo
 echo "brew bundle completed"

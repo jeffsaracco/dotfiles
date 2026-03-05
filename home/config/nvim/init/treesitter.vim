@@ -1,7 +1,8 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = true,
+  sync_install = false,
+  auto_install = true,
   ignore_install = {"haskell"},
   highlight = {
     enable = true,
