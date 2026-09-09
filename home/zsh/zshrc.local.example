@@ -1,0 +1,5 @@
+# Machine-only paths, private environment, and work settings belong here.
+
+# export GOPRIVATE=github.com/example
+# export STM32_PRG_PATH=/Applications/STMicroelectronics/...
+# path=("$HOME/.opencode/bin" $path)
