@@ -67,8 +67,6 @@ if [[ "$WANT_DESKTOP" == true ]]; then
   "$ROOT/script/run-dotbot.sh" "$ROOT/install.desktop.conf.json"
 fi
 
-"$ROOT/script/install-oh-my-zsh.sh"
-
 umask 077
 for local_config in "$HOME/.gitconfig.local" "$HOME/.zshrc.local"; do
   if [[ ! -e "$local_config" && ! -L "$local_config" ]]; then

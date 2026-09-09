@@ -1,7 +1,7 @@
 # Jeff Saracco's dotfiles
 
 Dotbot manages links, vim-plug manages Neovim plugins, and Git submodules
-provide Dotbot, TPM, and the custom Zsh plugins.
+provide Dotbot, Oh My Zsh, TPM, and the custom Zsh plugins.
 
 Supported platforms:
 

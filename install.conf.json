@@ -19,6 +19,7 @@
       "~/.gitconfig": "home/git/gitconfig",
       "~/.gitignore_global": "home/git/gitignore_global",
       "~/.grc": "home/dotgrc",
+      "~/.oh-my-zsh": "home/zsh/oh-my-zsh/upstream",
       "~/.tmux.conf": "home/tmux/tmux.conf",
       "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
       "~/.zshrc": "home/zsh/zshrc"

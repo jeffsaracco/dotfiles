@@ -14,3 +14,6 @@
 	path = home/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	ignore = dirty
+[submodule "home/zsh/oh-my-zsh/upstream"]
+	path = home/zsh/oh-my-zsh/upstream
+	url = https://github.com/ohmyzsh/ohmyzsh.git
