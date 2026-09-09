@@ -1,13 +1,3 @@
-[user]
-  name = Jeff Saracco
-  email = jeffsaracco@github.com
-  signingkey = 8F40279A76049CB0
-[github]
-  user = jeffsaracco
-[push]
-  default = simple
-[credential]
-  helper = osxkeychain
 [alias]
   st = status
   di = diff
@@ -17,31 +7,13 @@
   sta = stash
   llog = log --date=local
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[apply]
-  whitespace = nowarn
-[color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
-  ui = auto
-[commit]
-  gpgsign = true
 [core]
-  excludesfile = ~/.gitignore_global
-[pager]
-  diff = diff-so-fancy | less --tabs=1,5 -RFX
-  show = diff-so-fancy | less --tabs=1,5 -RFX
+  excludesFile = ~/.gitignore_global
+[fetch]
+  prune = true
+[init]
+  defaultBranch = main
 [pull]
   rebase = true
-[filter "lfs"]
-  process = git-lfs filter-process
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-[gpg]
-  program = /opt/homebrew/bin/gpg
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
-[init]
-	defaultBranch = main
+[include]
+  path = ~/.gitconfig.local

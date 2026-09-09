@@ -1,0 +1,19 @@
+[user]
+  name = Jeff Saracco
+  email = jeffsaracco@github.com
+
+# Enable signing only after the private key is available through ssh-agent.
+# [user]
+#   signingKey = ~/.ssh/id_ed25519.pub
+# [gpg]
+#   format = ssh
+# [commit]
+#   gpgSign = true
+
+# macOS only:
+# [credential]
+#   helper = osxkeychain
+
+# Opt in only on machines configured with a GitHub SSH key:
+# [url "ssh://git@github.com/"]
+#   insteadOf = https://github.com/
