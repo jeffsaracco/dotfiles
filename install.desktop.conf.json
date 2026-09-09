@@ -1,0 +1,14 @@
+[
+  {
+    "defaults": {
+      "link": {
+        "create": true
+      }
+    }
+  },
+  {
+    "link": {
+      "~/.config/alacritty": "home/config/alacritty"
+    }
+  }
+]

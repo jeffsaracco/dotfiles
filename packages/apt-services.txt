@@ -1,0 +1,5 @@
+default-mysql-server
+memcached
+nginx
+postgresql
+redis-server

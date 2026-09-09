@@ -1,35 +1,47 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-BREWFILE=~/Brewfile
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+WANT_DESKTOP="${1:-false}"
+WANT_SERVICES="${2:-false}"
+BREW="/opt/homebrew/bin/brew"
 
-OS="$(uname -s)"
-
-if [[ "$OS" = "Darwin" ]]
-then
-  HOMEBREW_LOCATION=/opt/homebrew/bin
-elif [[ "$OS" = "Linux" ]]
-then
-  HOMEBREW_LOCATION=/home/linuxbrew/.linuxbrew/bin
+if [[ "$(uname -s)" != "Darwin" || "$(uname -m)" != "arm64" ]]; then
+  printf 'brewstrap.sh supports Apple Silicon macOS only.\n' >&2
+  exit 1
 fi
 
-echo "looking for Homebrew installed in $HOMEBREW_LOCATION"
+if [[ ! -x "$BREW" ]]; then
+  if ! xcode-select -p >/dev/null 2>&1; then
+    printf 'Xcode Command Line Tools are required. Run xcode-select --install, then retry.\n' >&2
+    exit 1
+  fi
 
-if [ ! -d "$HOMEBREW_LOCATION" ]; then
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  installer="$(mktemp "${TMPDIR:-/tmp}/homebrew-install.XXXXXX")"
+  trap 'rm -f "$installer"' EXIT
+  curl --fail --location --show-error --silent \
+    --proto '=https' --tlsv1.2 \
+    https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \
+    --output "$installer"
+  NONINTERACTIVE=1 CI=1 /bin/bash "$installer"
 fi
 
-if [[ "$CODESPACES" = "true" ]]; then
-  sudo apt-get install build-essential procps curl file git
+if [[ ! -x "$BREW" ]]; then
+  printf 'Homebrew was not installed at %s.\n' "$BREW" >&2
+  exit 1
 fi
 
-echo
-echo "Running brew bundle"
-echo
+eval "$("$BREW" shellenv)"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ENV_HINTS=1
 
-$HOMEBREW_LOCATION/brew bundle install --file $BREWFILE
+"$BREW" bundle install --file="$ROOT/Brewfile"
 
-echo
-echo "brew bundle completed"
-echo
+if [[ "$WANT_DESKTOP" == true ]]; then
+  "$BREW" bundle install --file="$ROOT/Brewfile.desktop"
+fi
+
+if [[ "$WANT_SERVICES" == true ]]; then
+  "$BREW" bundle install --file="$ROOT/Brewfile.services"
+fi

@@ -1,91 +1,80 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-./script/install-oh-my-zsh.sh
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WANT_DESKTOP=false
+WANT_SERVICES=false
 
-OS="$(uname -s)"
+for profile in "$@"; do
+  case "$profile" in
+    base)
+      ;;
+    desktop)
+      WANT_DESKTOP=true
+      ;;
+    services)
+      WANT_SERVICES=true
+      ;;
+    -h|--help)
+      printf 'Usage: %s [base] [desktop] [services]\n' "$0"
+      exit 0
+      ;;
+    *)
+      printf 'Unknown profile: %s\n' "$profile" >&2
+      printf 'Usage: %s [base] [desktop] [services]\n' "$0" >&2
+      exit 2
+      ;;
+  esac
+done
 
-if [[ "$OS" = "Linux" ]]
-then
-  # Install fzf
-  sudo apt-get install fzf
+case "$(uname -s)" in
+  Darwin)
+    if [[ "$(uname -m)" != "arm64" ]]; then
+      printf 'This bootstrap supports Apple Silicon macOS only.\n' >&2
+      exit 1
+    fi
+    "$ROOT/script/brewstrap.sh" "$WANT_DESKTOP" "$WANT_SERVICES"
+    ;;
+  Linux)
+    if [[ ! -r /etc/os-release ]]; then
+      printf 'Cannot identify this Linux distribution.\n' >&2
+      exit 1
+    fi
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    case "${ID:-} ${ID_LIKE:-}" in
+      *ubuntu*|*debian*)
+        "$ROOT/script/install-apt.sh" "$WANT_DESKTOP" "$WANT_SERVICES"
+        ;;
+      *)
+        printf 'Only Ubuntu and Debian Linux are supported.\n' >&2
+        exit 1
+        ;;
+    esac
+    ;;
+  *)
+    printf 'Unsupported operating system: %s\n' "$(uname -s)" >&2
+    exit 1
+    ;;
+esac
 
-  # Debian Buster has a old version of neovim so we need to install the AppImage
-  sudo apt-get install -y libfuse2
+"$ROOT/script/run-dotbot.sh" "$ROOT/install.conf.json"
 
-  sudo apt install fuse -y
-  if [ $(getent group fuse) ]; then
-    echo "fuse group exists. not creating"
-  else
-    echo "group does not exist."
-    sudo groupadd fuse
+if [[ "$WANT_DESKTOP" == true ]]; then
+  "$ROOT/script/run-dotbot.sh" "$ROOT/install.desktop.conf.json"
+fi
+
+"$ROOT/script/install-oh-my-zsh.sh"
+
+umask 077
+for local_config in "$HOME/.gitconfig.local" "$HOME/.zshrc.local"; do
+  if [[ ! -e "$local_config" && ! -L "$local_config" ]]; then
+    : > "$local_config"
   fi
-  sudo usermod -a -G fuse ${USER}
-fi
+done
 
+"$ROOT/script/codespaces-setup.sh"
+"$ROOT/script/install-vim-plugins.sh"
 
-./script/run-dotbot.sh
-
-./script/brewstrap.sh
-
-if [ ! -f "/opt/homebrew/bin/nvim" ]; then
-  wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-  chmod u+x nvim.appimage
-  sudo mv nvim.appimage /usr/local/bin/nvim
-
-  echo "Neovim installed"
-fi
-
-
-if [[ "$OS" = "Linux" ]]
-then
-  # Update node to a decent version
-  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
-  sudo apt-get install -y nodejs ripgrep
-
-  echo
-  echo "Node installed"
-  echo
-fi
-
-sudo npm install -g n
-
-# Update npm
-sudo npm install -g npm@latest
-
-echo
-echo "NPM updated"
-echo
-
-# Start using latest node version
-sudo n latest
-echo
-echo "NPM using latest"
-echo
-
-# Update path after installing latest node
-PATH="$PATH"
-
-# Install neovim LSP packages
-sudo npm install -g \
-  typescript-language-server \
-  vscode-langservers-extracted
-
-echo
-echo "Neovim LSP packages installed"
-echo
-
-echo $?
-
-# Install vim plugins
-echo
-echo "Installing vim plugins"
-echo
-/opt/homebrew/bin/nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
-
-# Set ZSH as default shell
-sudo chsh -s $(which zsh) ${USER}
-
-
-./script/codespaces-setup.sh
+printf 'Dotfiles bootstrap completed.\n'

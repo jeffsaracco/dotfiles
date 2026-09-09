@@ -1,20 +1,27 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-# Use dotbot for the dotfiles
-CONFIG="install.conf.json"
-DOTBOT_DIR="dotbot"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CONFIG="${1:-$ROOT/install.conf.json}"
+DOTBOT="$ROOT/dotbot/bin/dotbot"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
+if ! command -v git >/dev/null 2>&1; then
+  printf 'git is required to initialize Dotbot and plugin submodules.\n' >&2
+  exit 1
+fi
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+if [[ ! -f "$CONFIG" ]]; then
+  printf 'Dotbot configuration does not exist: %s\n' "$CONFIG" >&2
+  exit 1
+fi
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+git -C "$ROOT" submodule sync --quiet --recursive
+git -C "$ROOT" submodule update --init --recursive
 
-echo
-echo "dotbot ran"
-echo
+if [[ ! -x "$DOTBOT" ]]; then
+  printf 'Dotbot is unavailable after initializing submodules.\n' >&2
+  exit 1
+fi
+
+"$DOTBOT" -d "$ROOT" -c "$CONFIG"

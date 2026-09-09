@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 
-if [[ ! -d ~/.oh-my-zsh ]]
-then
-  ZSH= sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
-  echo "oh-my-zsh is already installed"
+set -euo pipefail
+
+ZSH_DIR="${ZSH:-$HOME/.oh-my-zsh}"
+
+if ! command -v git >/dev/null 2>&1; then
+  printf 'git is required to install Oh My Zsh.\n' >&2
+  exit 1
 fi
 
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]
-then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+if [[ -e "$ZSH_DIR" || -L "$ZSH_DIR" ]]; then
+  if [[ ! -f "$ZSH_DIR/oh-my-zsh.sh" ]]; then
+    printf '%s exists but is not an Oh My Zsh installation.\n' "$ZSH_DIR" >&2
+    exit 1
+  fi
+  exit 0
 fi
 
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]
-then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-fi
+GIT_TERMINAL_PROMPT=0 git clone --depth=1 \
+  https://github.com/ohmyzsh/ohmyzsh.git \
+  "$ZSH_DIR"

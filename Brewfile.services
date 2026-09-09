@@ -1,0 +1,5 @@
+brew "memcached"
+brew "mysql"
+brew "nginx"
+brew "postgresql"
+brew "redis"
