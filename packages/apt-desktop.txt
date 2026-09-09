@@ -1,2 +1,3 @@
 alacritty
+fonts-hack-ttf
 xclip
