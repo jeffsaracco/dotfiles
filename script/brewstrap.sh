@@ -33,6 +33,12 @@ if [[ ! -x "$BREW" ]]; then
 fi
 
 eval "$("$BREW" shellenv)"
+
+# A Homebrew release older than the host macOS can map the OS codename to
+# `:dunno` and abort before bundle evaluation. Refresh Homebrew itself first.
+unset HOMEBREW_NO_AUTO_UPDATE
+"$BREW" update
+
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
 

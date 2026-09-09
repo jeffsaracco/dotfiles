@@ -48,6 +48,9 @@ On macOS, install Xcode Command Line Tools first:
 xcode-select --install
 ```
 
+The bootstrap explicitly updates Homebrew before evaluating the Brewfiles so
+an existing installation recognizes the host macOS release.
+
 ## Safety
 
 The bootstrap does not clean `$HOME`, force-overwrite files, or replace an
