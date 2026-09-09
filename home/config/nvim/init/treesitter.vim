@@ -1,41 +1,46 @@
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false,
-  auto_install = true,
-  ignore_install = {"haskell"},
-  highlight = {
-    enable = true,
-    disable = {},
-    additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = true
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-    max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
-  },
-  textobjects = {
-    select = {
-      enable = true,
-
-      -- Automatically jump forward to textobj, similar to targets.vim 
-      lookahead = true,
-
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-      },
-    },
-  },
-  matchup = {
-    enable = true,              -- mandatory, false will disable the whole extension
-    disable = {},  -- optional, list of language that will be disabled
-  },
+lua << EOF
+local parsers = {
+  'bash',
+  'css',
+  'diff',
+  'embedded_template',
+  'git_config',
+  'git_rebase',
+  'gitattributes',
+  'gitcommit',
+  'gitignore',
+  'go',
+  'gomod',
+  'gosum',
+  'gotmpl',
+  'gowork',
+  'html',
+  'javascript',
+  'json',
+  'lua',
+  'markdown',
+  'markdown_inline',
+  'query',
+  'regex',
+  'ruby',
+  'vim',
+  'vimdoc',
 }
+
+if vim.env.DOTFILES_NVIM_INSTALL_TOOLS == '1' then
+  require('nvim-treesitter').install(parsers):wait(300000)
+end
+vim.treesitter.language.register('gotmpl', 'gohtml')
+
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('TreesitterStart', { clear = true }),
+  pattern = {
+    'bash', 'css', 'eruby', 'gitcommit', 'gitrebase', 'go', 'gohtml',
+    'gomod', 'gosum', 'gotmpl', 'gowork', 'html', 'javascript', 'json',
+    'lua', 'markdown', 'ruby', 'vim',
+  },
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
 EOF

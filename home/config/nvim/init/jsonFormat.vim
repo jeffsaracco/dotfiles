@@ -1,1 +1,3 @@
-nmap =j :set filetype=json <bar> %!python -m json.tool<CR>
+if executable('jq')
+  nnoremap <leader>j <Cmd>setfiletype json<Bar>%!jq .<CR>
+endif

@@ -9,6 +9,9 @@ Supported platforms:
 - Current Ubuntu and Debian releases
 - GitHub Codespaces based on Ubuntu or Debian
 
+Linux installs the checksum-verified Neovim 0.12.5 release under
+`~/.local/lib`; macOS uses Homebrew's current stable Neovim.
+
 ## Install
 
 Clone over HTTPS so a new machine does not require SSH credentials before

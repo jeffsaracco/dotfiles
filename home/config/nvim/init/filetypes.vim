@@ -1,3 +1,4 @@
-" Set the filetype based on the file's extension, but only if
-" 'filetype' has not already been set
-au BufRead,BufNewFile *.gohtml setfiletype html
+augroup custom_filetypes
+  autocmd!
+  autocmd BufRead,BufNewFile *.gohtml setfiletype gohtml
+augroup END

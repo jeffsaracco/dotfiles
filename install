@@ -46,6 +46,8 @@ case "$(uname -s)" in
     case "${ID:-} ${ID_LIKE:-}" in
       *ubuntu*|*debian*)
         "$ROOT/script/install-apt.sh" "$WANT_DESKTOP" "$WANT_SERVICES"
+        "$ROOT/script/install-neovim-linux.sh"
+        export PATH="$HOME/.local/bin:$PATH"
         ;;
       *)
         printf 'Only Ubuntu and Debian Linux are supported.\n' >&2

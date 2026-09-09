@@ -13,7 +13,7 @@ if [[ "$(uname -s)" != "Darwin" || "$(uname -m)" != "arm64" ]]; then
 fi
 
 if [[ ! -x "$BREW" ]]; then
-  if ! xcode-select -p >/dev/null 2>&1; then
+  if ! xcode-select -p >/dev/null 2>&1 || ! xcrun --find clang >/dev/null 2>&1; then
     printf 'Xcode Command Line Tools are required. Run xcode-select --install, then retry.\n' >&2
     exit 1
   fi

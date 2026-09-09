@@ -11,7 +11,8 @@ function! Tabline()
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' ' . tab .':'
-    let s .= (bufname != '' ? ' '. fnamemodify(bufname, ':t') . '  ' : '[No Name] ')
+    let name = substitute(fnamemodify(bufname, ':t'), '%', '%%', 'g')
+    let s .= (bufname != '' ? ' '. name . '  ' : '[No Name] ')
 
     if bufmodified
       let s .= '[+] '
@@ -19,7 +20,7 @@ function! Tabline()
   endfor
 
   let s .= '%#TabLineFill#'
-  let s .= '%=%999XX'
+  let s .= '%=%999X'
   return s
 endfunction
 set tabline=%!Tabline()

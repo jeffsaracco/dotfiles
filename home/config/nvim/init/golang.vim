@@ -1,37 +1,14 @@
-autocmd FileType go set noexpandtab
-autocmd FileType go set nolist
+let g:go_fmt_command = 'gofmt'
+let g:go_addtags_transform = 'snakecase'
+let g:go_list_type = 'quickfix'
+let g:go_def_mode = 'gopls'
+let g:go_decls_includes = 'func,type'
 
-let g:go_fmt_command = "goimports"
-let g:go_addtags_transform = "snakecase"
-let g:go_list_type = "quickfix"
-let g:go_list_type_commands = {"GoMetaLinter": "quickfix"}
-
-" Highlighting
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 
-" Linting
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave = 0
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_deadline = '5s'
-let g:go_metalinter_command = 'golangci-lint'
-
-" Alternate Files/Definitions
-autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-
-let g:go_def_mode = 'godef'
-let g:go_decls_includes = "func,type"
-
-" Running/Building
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-
-" run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
   if l:file =~# '^\f\+_test\.go$'
@@ -41,12 +18,17 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-
-" Testing
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-
-" Declarations
-autocmd FileType go nmap <leader>d :GoDecls<CR>
-autocmd FileType go nmap <leader>D :GoDeclsDir<CR>
+augroup go_config
+  autocmd!
+  autocmd FileType go setlocal noexpandtab nolist
+  autocmd FileType go command! -buffer -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd FileType go command! -buffer -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd FileType go command! -buffer -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd FileType go command! -buffer -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  autocmd FileType go nmap <buffer> <leader>r <Plug>(go-run)
+  autocmd FileType go nnoremap <buffer> <leader>b <Cmd>call <SID>build_go_files()<CR>
+  autocmd FileType go nmap <buffer> <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <buffer> <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nnoremap <buffer> <leader>d <Cmd>GoDecls<CR>
+  autocmd FileType go nnoremap <buffer> <leader>D <Cmd>GoDeclsDir<CR>
+augroup END

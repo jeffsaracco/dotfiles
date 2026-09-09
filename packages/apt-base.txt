@@ -12,7 +12,6 @@ grc
 htop
 jq
 ncdu
-neovim
 nodejs
 npm
 python3
