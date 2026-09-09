@@ -57,6 +57,10 @@ The bootstrap does not clean `$HOME`, force-overwrite files, or replace an
 existing non-dotfiles configuration. If a managed destination already exists,
 Dotbot stops so it can be reviewed and moved manually.
 
+The one automatic migration is a legacy `~/.oh-my-zsh` checkout created by an
+older version of this repository. It is moved to a timestamped backup before
+the pinned Oh My Zsh submodule is linked.
+
 The installer does not change the login shell. To opt in after installation:
 
 ```sh
