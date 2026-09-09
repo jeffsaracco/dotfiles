@@ -1,1 +1,3 @@
-set clipboard=unnamed
+if has('clipboard')
+  set clipboard=unnamedplus
+endif

@@ -63,8 +63,10 @@ chsh -s "$(command -v zsh)"
 ## Local Configuration
 
 The installer creates `~/.gitconfig.local` and `~/.zshrc.local` with mode 600
-when they are absent. It never overwrites them. Put identity, signing settings,
-private environment variables, and machine-specific paths there.
+when they are absent. It never overwrites existing values. The Git file is
+seeded with this repository owner's identity and the macOS credential helper.
+Put signing settings, private environment variables, and machine-specific
+paths in the local files.
 
 Examples are tracked at:
 

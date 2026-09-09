@@ -1,0 +1,41 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  configuration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+      - name: Install validators
+        run: sudo apt-get update && sudo apt-get install -y shellcheck tmux zsh
+      - name: Validate shell scripts
+        run: |
+          bash -n install script/*.sh bin/rfv
+          sh -n bin/tat
+          zsh -n home/zsh/zshrc home/zsh/oh-my-zsh/custom/aliases.zsh
+          shellcheck install script/*.sh bin/rfv bin/tat
+      - name: Validate structured configuration
+        run: |
+          python3 -m json.tool install.conf.json >/dev/null
+          python3 -m json.tool install.desktop.conf.json >/dev/null
+          python3 -c 'import pathlib, tomllib; tomllib.loads(pathlib.Path("home/config/alacritty/alacritty.toml").read_text())'
+          ruby -c Brewfile
+          ruby -c Brewfile.desktop
+          ruby -c Brewfile.services
+          git config --file home/git/gitconfig --list >/dev/null
+      - name: Validate Dotbot profiles
+        run: |
+          dotbot/bin/dotbot --dry-run --base-directory "$PWD" --config-file install.conf.json
+          dotbot/bin/dotbot --dry-run --base-directory "$PWD" --config-file install.desktop.conf.json
+      - name: Validate tmux configuration
+        run: |
+          tmux -L dotfiles-test -f home/tmux/tmux.conf new-session -d -s dotfiles-test
+          tmux -L dotfiles-test kill-server

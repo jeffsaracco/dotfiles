@@ -1,3 +1,4 @@
 alacritty
-fonts-hack-ttf
+fontconfig
 xclip
+xz-utils

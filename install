@@ -47,6 +47,9 @@ case "$(uname -s)" in
       *ubuntu*|*debian*)
         "$ROOT/script/install-apt.sh" "$WANT_DESKTOP" "$WANT_SERVICES"
         "$ROOT/script/install-neovim-linux.sh"
+        if [[ "$WANT_DESKTOP" == true ]]; then
+          "$ROOT/script/install-font-linux.sh"
+        fi
         export PATH="$HOME/.local/bin:$PATH"
         ;;
       *)
@@ -73,6 +76,18 @@ for local_config in "$HOME/.gitconfig.local" "$HOME/.zshrc.local"; do
     : > "$local_config"
   fi
 done
+
+if ! git config --file "$HOME/.gitconfig.local" --get user.name >/dev/null; then
+  git config --file "$HOME/.gitconfig.local" user.name "Jeff Saracco"
+fi
+if ! git config --file "$HOME/.gitconfig.local" --get user.email >/dev/null; then
+  git config --file "$HOME/.gitconfig.local" user.email "jeffsaracco@github.com"
+fi
+
+if [[ "$(uname -s)" == "Darwin" ]] &&
+   ! git config --file "$HOME/.gitconfig.local" --get credential.helper >/dev/null; then
+  git config --file "$HOME/.gitconfig.local" credential.helper osxkeychain
+fi
 
 "$ROOT/script/codespaces-setup.sh"
 "$ROOT/script/install-vim-plugins.sh"
