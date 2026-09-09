@@ -31,7 +31,7 @@ With no arguments, `install` applies the safe CLI base. Profiles are additive:
 ./install desktop services
 ```
 
-- `desktop` adds Alacritty and its configuration.
+- `desktop` adds Alacritty, AeroSpace, a Nerd Font, and their configuration.
 - `services` installs database, cache, and web-server packages without
   explicitly enabling or starting them.
 

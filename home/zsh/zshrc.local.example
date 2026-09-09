@@ -3,3 +3,8 @@
 # export GOPRIVATE=github.com/example
 # export STM32_PRG_PATH=/Applications/STMicroelectronics/...
 # path=("$HOME/.opencode/bin" $path)
+
+# Optional runtime managers. Prefer mise unless a project requires these.
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
+# path=("$HOME/.bun/bin" "$HOME/.rvm/bin" $path)

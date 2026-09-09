@@ -8,6 +8,7 @@
   },
   {
     "link": {
+      "~/.config/aerospace": "home/config/aerospace",
       "~/.config/alacritty": "home/config/alacritty"
     }
   }
