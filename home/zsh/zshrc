@@ -2,6 +2,7 @@ export DEFAULT_USER=`whoami`
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/dotfiles/home/zsh/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -166,3 +167,6 @@ eval "$(~/.local/bin/mise activate)"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
+
+# opencode
+export PATH=/Users/jeff/.opencode/bin:$PATH
