@@ -42,6 +42,14 @@ unset HOMEBREW_NO_AUTO_UPDATE
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Older versions of this bootstrap installed npm globally as root. Remove only
+# its known unmanaged npx link so Homebrew can own the Node command set.
+legacy_npx="$("$BREW" --prefix)/bin/npx"
+if [[ -L "$legacy_npx" ]] &&
+   [[ "$(readlink "$legacy_npx")" == "../lib/node_modules/npm/bin/npx-cli.js" ]]; then
+  rm -f "$legacy_npx" 2>/dev/null || sudo rm -f "$legacy_npx"
+fi
+
 "$BREW" bundle install --file="$ROOT/Brewfile"
 
 if [[ "$WANT_DESKTOP" == true ]]; then
