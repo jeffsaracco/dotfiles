@@ -68,15 +68,13 @@ is a correctness, maintainability, or project-specific reason not to.
 
 ## 4. Simplify
 
-If there are actionable findings, invoke `simplify` with:
+Load the `simplify` skill and apply it to the consolidated actionable
+findings.
 
-1. The original task/change context.
-2. The scoped diff.
-3. The consolidated findings.
-4. Any relevant reasoning from the reviewers.
+Use the original task context, scoped diff, consolidated findings, and
+reviewer reasoning as input.
 
-Ask `simplify` to address the findings as a coherent cleanup pass rather
-than mechanically applying every recommendation.
+Address findings coherently rather than mechanically.
 
 If there are no worthwhile findings, make no changes.
 
