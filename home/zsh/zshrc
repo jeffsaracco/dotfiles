@@ -115,3 +115,10 @@ fi
 [[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 export DISABLE_AUTO_TITLE=true
+
+# bun completions
+[ -s "/Users/jeff/.bun/_bun" ] && source "/Users/jeff/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
