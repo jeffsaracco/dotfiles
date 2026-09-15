@@ -1,3 +1,3 @@
 if executable('jq')
-  nnoremap <leader>j <Cmd>setfiletype json<Bar>%!jq .<CR>
+  nnoremap <localleader>j <Cmd>setfiletype json<Bar>%!jq .<CR>
 endif

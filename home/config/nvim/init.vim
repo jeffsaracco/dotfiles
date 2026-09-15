@@ -4,6 +4,9 @@ set nocompatible
 let g:loaded_matchit = 1
 filetype plugin indent on
 
+let mapleader = ","
+let maplocalleader = ";"
+
 if empty(glob(stdpath('config') . '/autoload/plug.vim'))
   echoerr 'vim-plug is missing from the tracked Neovim configuration'
   finish

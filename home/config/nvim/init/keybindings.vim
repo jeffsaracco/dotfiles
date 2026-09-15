@@ -1,6 +1,3 @@
-let mapleader = ","
-let maplocalleader = ";"
-
 cnoreabbrev <expr> W getcmdtype() ==# ':' && getcmdline() ==# 'W' ? 'w' : 'W'
 cnoreabbrev <expr> Wq getcmdtype() ==# ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'
 cnoreabbrev <expr> WQ getcmdtype() ==# ':' && getcmdline() ==# 'WQ' ? 'wq' : 'WQ'
