@@ -16,6 +16,11 @@
   {
     "link": {
       "~/.config/nvim": "home/config/nvim",
+      "~/.config/opencode/opencode.json": "home/config/opencode/opencode.json",
+      "~/.config/opencode/opencode.jsonc": "home/config/opencode/opencode.jsonc",
+      "~/.config/opencode/commands": "home/config/opencode/commands",
+      "~/.config/opencode/plugins": "home/config/opencode/plugins",
+      "~/.config/opencode/tui.json": "home/config/opencode/tui.json",
       "~/.gitconfig": "home/git/gitconfig",
       "~/.gitignore_global": "home/git/gitignore_global",
       "~/.grc": "home/dotgrc",
