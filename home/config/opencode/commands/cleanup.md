@@ -1,5 +1,6 @@
 ---
 description: Audit recent changes for complexity and quality issues, then simplify actionable findings
+agent: build
 ---
 
 # Cleanup
@@ -25,19 +26,25 @@ Do not expand the scope to unrelated existing code.
 
 ## 2. Run audits
 
-Run the following as independent subagents. They are reviewers only and must
-not modify files.
+Use the `task` tool with `subagent_type: "general"` for each of the following
+independent reviews. These labels name reviewer roles, not custom agent IDs.
+Pass each reviewer the original task context and the exact scoped changes.
+They are reviewers only and must not modify files.
 
 ### Ponytail audit
 
-Run `ponytail-audit` against the scoped changes.
+Have this reviewer load the `ponytail-audit` skill using the native `skill`
+tool. Restrict its audit to the scoped changes; override its whole-repository
+default for this cleanup.
 
 Ask it to return concrete, actionable findings. Preserve file and line
 references where available.
 
 ### Complexity review
 
-Run `complexity-review` against the same scoped changes.
+Have this reviewer perform the complexity review described below against
+the same scoped changes. `complexity-review` is a slash command, not a
+registered skill or subagent; do not try to load it as either.
 
 Ask it to identify unnecessary complexity, excessive abstraction,
 duplication, confusing control flow, unnecessary state, and opportunities

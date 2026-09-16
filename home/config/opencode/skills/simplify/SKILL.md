@@ -5,7 +5,10 @@ description: Simplify code by reducing unnecessary complexity, abstraction, indi
 
 # Simplify
 
-Analyze the repository for one high-value simplification opportunity.
+Use the supplied scope and findings. If no scope is supplied, use the current
+working changes. Do not expand to unrelated repository code.
+
+Find high-value opportunities to simplify while preserving intended behavior.
 
 Prioritize:
 - duplicated logic
@@ -17,7 +20,12 @@ Prioritize:
 - unnecessary indirection
 - code that can be deleted entirely
 
-Do not make changes yet.
+When asked to apply simplifications, including by `/cleanup` or `/simplify`,
+inspect the code and implement worthwhile changes within that scope. Honor
+the active agent permissions and any explicit review-only request. If the
+request is only for analysis, propose changes without editing.
+
+If there are no worthwhile changes, leave the code as it is.
 
 If the user provides findings from Ponytail or another static-analysis tool:
 
@@ -28,7 +36,7 @@ If the user provides findings from Ponytail or another static-analysis tool:
 - Prefer addressing the root cause behind a finding rather than mechanically
   reducing the reported score.
 
-Return:
+For analysis-only requests, return:
 1. The hotspot
 2. Why it is complex
 3. What is duplicated or coupled
@@ -40,3 +48,7 @@ Return:
 
 Prefer solutions that reduce the number of concepts in the codebase.
 Do not introduce abstractions merely to make code DRY.
+
+After applying changes, inspect the diff and run relevant tests and validation.
+Report accepted and rejected findings, changes made, and verification results,
+including failures or checks that could not be run.
