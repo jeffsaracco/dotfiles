@@ -1,0 +1,49 @@
+{
+  "version": 3,
+  "skills": {
+    "godot-master": {
+      "source": "thedivergentai/gd-agentic-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/thedivergentai/gd-agentic-skills.git",
+      "skillPath": "skills/godot-master/SKILL.md",
+      "skillFolderHash": "515474f7e35e556026e39bb15eb8efacf81529e0",
+      "installedAt": "2026-09-20T17:23:28.829Z",
+      "updatedAt": "2026-09-20T17:24:39.874Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "installedAt": "2026-09-20T17:23:36.328Z",
+      "updatedAt": "2026-09-20T17:23:36.328Z"
+    },
+    "stop-slop": {
+      "source": "hardikpandya/stop-slop",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/hardikpandya/stop-slop.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "8da1f030185bdfe8471220585162991eaeb970e9",
+      "installedAt": "2026-09-22T20:36:21.525Z",
+      "updatedAt": "2026-09-22T20:36:21.525Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "droid",
+    "gemini-cli",
+    "github-copilot",
+    "kilo",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed"
+  ]
+}
