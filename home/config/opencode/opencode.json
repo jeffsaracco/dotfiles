@@ -7,7 +7,7 @@
   },
   "plugin": [
     "@dietrichgebert/ponytail",
-    "superpowers@git+https://github.com/obra/superpowers.git"
+    "oh-my-opencode-slim"
   ],
   "provider": {
     "ollama": {
@@ -55,5 +55,14 @@
   },
   "compaction": {
     "prune": false
-  }
+  },
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
+  "lsp": true
 }
