@@ -1,0 +1,19 @@
+# Installed dependencies and generated package metadata.
+node_modules/
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+
+# Local plugin state and session reflections.
+.oh-my-opencode-slim/
+.ponytail-active
+oh-my-opencode-slim/reflections/
+
+# Backups and private local configuration.
+*.bak
+*.bak-*
+.env
+.env.*
+auth.json
+service.json
