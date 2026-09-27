@@ -1,0 +1,6 @@
+# Secrets, runtime state, and managed installs.
+agent/auth.json
+agent/sessions/
+agent/install/
+agent/npm/
+agent/models-store.json

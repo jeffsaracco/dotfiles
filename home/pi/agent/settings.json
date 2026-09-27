@@ -1,0 +1,14 @@
+{
+  "lastChangelogVersion": "0.87.1",
+  "theme": "dark",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "tuiMode": "regular",
+  "modelThinkingLevels": {
+    "opencode/claude-opus-5-5": "medium"
+  },
+  "showCacheMissNotices": true,
+  "packages": [
+    "npm:pi-subagents"
+  ]
+}

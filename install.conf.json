@@ -22,6 +22,7 @@
       "~/.gitignore_global": "home/git/gitignore_global",
       "~/.grc": "home/dotgrc",
       "~/.oh-my-zsh": "home/zsh/oh-my-zsh/upstream",
+      "~/.pi": "home/pi",
       "~/.tmux.conf": "home/tmux/tmux.conf",
       "~/.tmux/plugins/tpm": "home/tmux/plugins/tpm",
       "~/.zshrc": "home/zsh/zshrc"
