@@ -11,5 +11,24 @@
   "packages": [
     "npm:pi-subagents",
     "npm:pi-rtk"
-  ]
+  ],
+  "enabledModels": [
+    "openai-codex/gpt-6-astra",
+    "openai-codex/gpt-6-luna",
+    "openai-codex/gpt-6-sol",
+    "opencode/claude-fable-5-1",
+    "opencode/claude-opus-5-5",
+    "opencode/deepseek-v4.1-flash",
+    "opencode/glm-5.3-flash",
+    "opencode/kimi-k3",
+    "opencode/minimax-m3"
+  ],
+  "editorPaddingX": 1,
+  "terminal": {
+    "clearOnShrink": true,
+    "showTerminalProgress": true
+  },
+  "enableInstallTelemetry": false,
+  "defaultProjectTrust": "always",
+  "treeFilterMode": "default"
 }
