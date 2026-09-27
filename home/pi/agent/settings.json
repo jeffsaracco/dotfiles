@@ -9,6 +9,7 @@
   },
   "showCacheMissNotices": true,
   "packages": [
-    "npm:pi-subagents"
+    "npm:pi-subagents",
+    "npm:pi-rtk"
   ]
 }
