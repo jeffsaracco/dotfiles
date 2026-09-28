@@ -1,0 +1,80 @@
+{
+	"version": 15,
+	"enabled": false,
+	"workingIndicator": {
+		"enabled": true
+	},
+	"colorSource": "pi",
+	"theme": {
+		"light": "light",
+		"dark": "dark"
+	},
+	"icons": "plain",
+	"editor": {
+		"minContentRows": 3,
+		"topMarginRows": 1
+	},
+	"display": {
+		"showProvider": "auto",
+		"workspaceLabel": "name"
+	},
+	"segments": [
+		{
+			"id": "git",
+			"enabled": true
+		},
+		{
+			"id": "cost",
+			"enabled": true
+		},
+		{
+			"id": "throughput",
+			"enabled": true
+		},
+		{
+			"id": "context",
+			"enabled": true
+		},
+		{
+			"id": "tokens",
+			"enabled": false
+		},
+		{
+			"id": "model",
+			"enabled": true
+		}
+	],
+	"model": {
+		"customNames": {},
+		"showThinking": "auto"
+	},
+	"git": {
+		"showDirty": true,
+		"showAheadBehind": true,
+		"showBaseBehind": true,
+		"shaMode": "off",
+		"worktreeSummary": "status",
+		"timeoutMs": 1500,
+		"refreshDebounceMs": 250,
+		"pollIntervalMs": 15000
+	},
+	"context": {
+		"text": "percent+tokens",
+		"progress": false,
+		"progressStyle": "border",
+		"progressWidth": "third"
+	},
+	"cost": {
+		"hideZero": false
+	},
+	"tokens": {
+		"display": "input-output",
+		"cache": "auto"
+	},
+	"throughput": {
+		"precision": "auto"
+	},
+	"bottomDetails": {
+		"showAutoCompact": true
+	}
+}

@@ -10,7 +10,8 @@
   "packages": [
     "npm:pi-subagents",
     "npm:remote-pi",
-    "npm:@zhcsyncer/pi-glance"
+    "npm:pi-open-tui",
+    "npm:pi-compact-tools"
   ],
   "enabledModels": [
     "openai-codex/gpt-6-astra",
@@ -31,5 +32,5 @@
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
   "treeFilterMode": "default",
-  "theme": "dark"
+  "theme": "starry-night"
 }
