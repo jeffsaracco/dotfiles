@@ -1,6 +1,5 @@
 {
   "lastChangelogVersion": "0.87.1",
-  "theme": "dark",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "tuiMode": "regular",
@@ -10,7 +9,8 @@
   "showCacheMissNotices": true,
   "packages": [
     "npm:pi-subagents",
-    "npm:pi-rtk"
+    "npm:remote-pi",
+    "npm:@zhcsyncer/pi-glance"
   ],
   "enabledModels": [
     "openai-codex/gpt-6-astra",
@@ -30,5 +30,6 @@
   },
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
-  "treeFilterMode": "default"
+  "treeFilterMode": "default",
+  "theme": "dark"
 }
