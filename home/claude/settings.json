@@ -19,8 +19,14 @@
       }
     }
   },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": ""
+  },
   "theme": "auto",
   "editorMode": "normal",
   "autoContinueAtUsageLimit": false,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true
 }

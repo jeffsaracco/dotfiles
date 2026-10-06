@@ -1,17 +1,26 @@
 {
-  "lastChangelogVersion": "0.87.1",
-  "defaultProvider": "opencode",
+  "lastChangelogVersion": "1.0.4",
+  "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-5-5",
   "tuiMode": "regular",
+  "defaultTools": [
+    "+codemode"
+  ],
   "modelThinkingLevels": {
-    "opencode/claude-opus-5-5": "medium"
+    "opencode/claude-opus-5-5": "medium",
+    "openai-codex/gpt-6-astra": "medium",
+    "opencode/space-bunny-free": "max"
   },
   "showCacheMissNotices": true,
   "packages": [
     "npm:pi-subagents",
     "npm:remote-pi",
     "npm:pi-open-tui",
-    "npm:pi-compact-tools"
+    "npm:pi-compact-tools",
+    "npm:pi-jev",
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access",
+    "npm:@gotgenes/pi-anthropic-auth"
   ],
   "enabledModels": [
     "openai-codex/gpt-6-astra",
@@ -22,7 +31,8 @@
     "opencode/deepseek-v4.1-flash",
     "opencode/glm-5.3-flash",
     "opencode/kimi-k3",
-    "opencode/minimax-m3"
+    "opencode/minimax-m3",
+    "opencode/space-bunny-free"
   ],
   "editorPaddingX": 1,
   "terminal": {
@@ -32,5 +42,9 @@
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
   "treeFilterMode": "default",
-  "theme": "starry-night"
+  "theme": "starry-night",
+  "extensions": [
+    "-builtin:mcp"
+  ],
+  "hideThinkingBlock": false
 }

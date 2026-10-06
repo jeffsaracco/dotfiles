@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "inlineFooter": false,
+  "inlineFooter": true,
   "settingsLanguage": "en",
   "cursorStyle": "block",
   "fullscreen": {
@@ -11,7 +11,7 @@
   },
   "footerSegments": {
     "cwd": true,
-    "hostname": true,
+    "hostname": false,
     "sessionName": true,
     "gitBranch": true,
     "gitStatus": true,
