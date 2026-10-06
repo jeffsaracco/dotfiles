@@ -16,6 +16,7 @@
   {
     "link": {
       "~/.agents": "home/agents",
+      "~/.claude": "home/claude",
       "~/.config/nvim": "home/config/nvim",
       "~/.config/opencode": "home/config/opencode",
       "~/.gitconfig": "home/git/gitconfig",

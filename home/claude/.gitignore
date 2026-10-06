@@ -1,0 +1,15 @@
+# Claude Code writes lots of runtime state, history, and caches here.
+# Ignore everything by default and only track portable config.
+/*
+!/.gitignore
+!/CLAUDE.md
+!/RTK.md
+!/settings.json
+!/keybindings.json
+!/agents/
+!/commands/
+!/hooks/
+!/skills/
+
+# Skills synced from claude.ai are managed by Claude Code.
+/skills/synced/
