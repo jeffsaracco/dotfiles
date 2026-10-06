@@ -22,7 +22,7 @@
   "attribution": {
     "commit": "",
     "pr": "",
-    "sessionUrl": ""
+    "sessionUrl": false
   },
   "theme": "auto",
   "editorMode": "normal",
