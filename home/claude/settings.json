@@ -1,4 +1,10 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "model": "opus",
   "hooks": {
     "PreToolUse": [
       {
@@ -12,6 +18,31 @@
       }
     ]
   },
+  "enabledPlugins": {
+    "cc-plugin-you-should-know@builtin": true,
+    "desktop-usage-strip@awesome-claude-code-mods": true,
+    "session-meter@jeff-mods": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "awesome-claude-code-mods": {
+      "source": {
+        "source": "github",
+        "repo": "whyashthakker/awesome-claude-code-mods"
+      }
+    },
+    "jeff-mods": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/jeff/.claude/mods/session-meter"
+      }
+    }
+  },
   "pluginConfigs": {
     "cc-plugin-agents-md@builtin": {
       "options": {
@@ -19,14 +50,12 @@
       }
     }
   },
-  "attribution": {
-    "commit": "",
-    "pr": "",
-    "sessionUrl": false
-  },
   "theme": "auto",
   "editorMode": "normal",
   "autoContinueAtUsageLimit": false,
+  "teammateMode": "tmux",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": 1,
+  "CLAUDE_CODE_SPAWN_BACKEND": "tmux"
 }

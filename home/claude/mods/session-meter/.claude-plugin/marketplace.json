@@ -1,0 +1,5 @@
+{
+  "name": "jeff-mods",
+  "owner": { "name": "Jeff Saracco" },
+  "plugins": [{ "name": "session-meter", "source": "./" }]
+}

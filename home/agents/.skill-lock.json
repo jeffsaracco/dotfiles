@@ -27,6 +27,15 @@
       "skillFolderHash": "8da1f030185bdfe8471220585162991eaeb970e9",
       "installedAt": "2026-09-22T20:36:21.525Z",
       "updatedAt": "2026-09-22T20:36:21.525Z"
+    },
+    "brag-slim": {
+      "source": "latent-spaces/brag",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/latent-spaces/brag.git",
+      "skillPath": "skills/brag-slim/SKILL.md",
+      "skillFolderHash": "b2b42e7aca3661dfcea68e4c1e5167b3bcfd6a35",
+      "installedAt": "2026-10-07T18:09:30.820Z",
+      "updatedAt": "2026-10-07T18:10:18.953Z"
     }
   },
   "dismissed": {
@@ -43,7 +52,9 @@
     "kilo",
     "kimi-code-cli",
     "opencode",
+    "pi",
     "warp",
-    "zed"
+    "zed",
+    "claude-code"
   ]
 }

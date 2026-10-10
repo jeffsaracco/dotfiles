@@ -1,0 +1,7 @@
+{
+  "name": "session-meter",
+  "version": "0.2.0",
+  "description": "A powerline-style line above the prompt with plan usage, context, cost, model and git branch",
+  "author": { "name": "Jeff Saracco" },
+  "types": "./types/index.d.ts"
+}

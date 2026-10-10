@@ -10,6 +10,7 @@
 !/commands/
 !/hooks/
 !/skills/
+!/mods/
 
 # Skills synced from claude.ai are managed by Claude Code.
 /skills/synced/
