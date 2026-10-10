@@ -1,0 +1,6 @@
+{
+  "name": "tmux",
+  "version": "0.1.0",
+  "description": "Claude state and usage in the tmux status line, a tool to read other panes, and long-running commands moved to their own tmux window",
+  "author": { "name": "Jeff Saracco" }
+}
