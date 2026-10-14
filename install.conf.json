@@ -17,6 +17,9 @@
     "link": {
       "~/.agents": "home/agents",
       "~/.claude": "home/claude",
+      "~/.config/herdr/config.toml": "home/config/herdr/config.toml",
+      "~/.config/herdr/plugins/config/herdr-spreader/config.yaml": "home/config/herdr/plugins/config/herdr-spreader/config.yaml",
+      "~/.config/herdr/plugins/config/switchboard/config.toml": "home/config/herdr/plugins/config/switchboard/config.toml",
       "~/.config/nvim": "home/config/nvim",
       "~/.config/opencode": "home/config/opencode",
       "~/.gitconfig": "home/git/gitconfig",

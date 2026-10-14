@@ -1,0 +1,48 @@
+onboarding = false
+
+[ui]
+status_indicators = "symbols"
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+[ui.toast]
+delivery = "herdr"
+
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.toggle"
+description = "nvim sidebar"
+
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.pick-file"
+description = "open file from agent output"
+
+[keys]
+goto = ""
+
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "dartyuhov.blink.open"
+description = "switch agent"
+
+[[keys.command]]
+key = "prefix+shift+b"          # toggle the docked beads sidebar
+type = "plugin_action"
+command = "herdr-beads.open-dock"
+
+[[keys.command]]
+key = "prefix+shift+k"          # toggle the floating beads board
+type = "plugin_action"
+command = "herdr-beads.open-board"
+
+[[keys.command]]
+key = "prefix+space"
+type = "plugin_action"
+command = "switchboard.menu"
+description = "Switchboard menu"

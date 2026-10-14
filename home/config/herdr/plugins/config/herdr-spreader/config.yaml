@@ -1,0 +1,45 @@
+workspaces:
+  - name: family_quiz
+    root: ~/workspace/family_quiz/
+    tabs:
+      - label: claude
+        panes:
+          - command: claude
+          - split: right
+            ratio: 0.5
+      - label: nvim
+        panes:
+          - command: nvim
+  - name: dungeon_slug
+    root: ~/workspace/dungeon_slug/
+    tabs:
+      - label: claude
+        panes:
+          - command: claude
+          - split: right
+            ratio: 0.5
+      - label: nvim
+        panes:
+          - command: nvim
+  - name: snow_guy
+    root: ~/workspace/snow_guy/
+    tabs:
+      - label: claude
+        panes:
+          - command: claude
+          - split: right
+            ratio: 0.5
+      - label: nvim
+        panes:
+          - command: nvim
+  - name: dragon_slayer
+    root: ~/workspace/dragon_slayer/
+    tabs:
+      - label: claude
+        panes:
+          - command: claude
+          - split: right
+            ratio: 0.5
+      - label: nvim
+        panes:
+          - command: nvim
