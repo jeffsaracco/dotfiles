@@ -77,6 +77,7 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'ChmaraX/herdr-nvim'
 
 call plug#end()
 

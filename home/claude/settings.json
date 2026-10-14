@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": "",
@@ -16,20 +19,34 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/jeff/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
   },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": true,
     "desktop-usage-strip@awesome-claude-code-mods": true,
-    "session-meter@jeff-mods": true
+    "oh-my-claudecode@omc": true,
+    "session-meter@jeff-mods": true,
+    "ui-themes@ui-themes": true,
+    "impeccable@impeccable": true,
+    "godot-prompter@skillsmith": true
   },
   "extraKnownMarketplaces": {
-    "ponytail": {
-      "source": {
-        "source": "github",
-        "repo": "DietrichGebert/ponytail"
-      }
-    },
     "awesome-claude-code-mods": {
       "source": {
         "source": "github",
@@ -40,6 +57,36 @@
       "source": {
         "source": "directory",
         "path": "/Users/jeff/.claude/mods/session-meter"
+      }
+    },
+    "omc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "ui-themes": {
+      "source": {
+        "source": "github",
+        "repo": "yugal1107/ui-themes"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    },
+    "skillsmith": {
+      "source": {
+        "source": "github",
+        "repo": "jame581/skillsmith"
       }
     }
   },
@@ -57,5 +104,8 @@
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": 1,
-  "CLAUDE_CODE_SPAWN_BACKEND": "tmux"
+  "CLAUDE_CODE_SPAWN_BACKEND": "tmux",
+  "omcHud": {
+    "preset": "full"
+  }
 }
