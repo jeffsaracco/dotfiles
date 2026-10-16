@@ -24,6 +24,10 @@ description = "open file from agent output"
 
 [keys]
 goto = ""
+cycle_pane_previous = "ctrl+h"
+previous_agent = "prefix+comma"
+next_agent = "prefix+period"
+last_pane = "ctrl+space"
 
 [[keys.command]]
 key = "prefix+f"
@@ -42,7 +46,7 @@ type = "plugin_action"
 command = "herdr-beads.open-board"
 
 [[keys.command]]
-key = "prefix+space"
+key = "prefix+s"
 type = "plugin_action"
 command = "switchboard.menu"
 description = "Switchboard menu"

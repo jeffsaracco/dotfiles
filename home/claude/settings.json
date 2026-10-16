@@ -44,7 +44,8 @@
     "session-meter@jeff-mods": true,
     "ui-themes@ui-themes": true,
     "impeccable@impeccable": true,
-    "godot-prompter@skillsmith": true
+    "godot-prompter@skillsmith": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "awesome-claude-code-mods": {
