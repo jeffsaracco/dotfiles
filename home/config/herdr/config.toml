@@ -39,11 +39,6 @@ command = "dartyuhov.blink.open"
 description = "switch agent"
 
 [[keys.command]]
-key = "prefix+shift+b"          # toggle the docked beads sidebar
-type = "plugin_action"
-command = "herdr-beads.open-dock"
-
-[[keys.command]]
 key = "prefix+shift+k"          # toggle the floating beads board
 type = "plugin_action"
 command = "herdr-beads.open-board"
