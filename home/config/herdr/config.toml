@@ -7,6 +7,9 @@ status_indicators = "symbols"
 name = "gruvbox"
 auto_switch = false
 
+[terminal]
+new_cwd = "follow"
+
 [ui.toast]
 delivery = "herdr"
 
