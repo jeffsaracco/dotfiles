@@ -10,6 +10,5 @@
 # Pi specific settings per project
 .pi/
 
-# oh-my-claudecode runtime state; project skills are meant to be committed
-.omc/*
-!.omc/skills/
+# Leftover oh-my-claudecode state in older projects
+.omc/

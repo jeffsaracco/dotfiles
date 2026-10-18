@@ -35,12 +35,11 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
+    "command": "bash ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/ponytail-statusline.sh"
   },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": true,
     "desktop-usage-strip@awesome-claude-code-mods": true,
-    "oh-my-claudecode@omc": true,
     "session-meter@jeff-mods": true,
     "ui-themes@ui-themes": true,
     "impeccable@impeccable": true,
@@ -58,12 +57,6 @@
       "source": {
         "source": "directory",
         "path": "/Users/jeff/.claude/mods/session-meter"
-      }
-    },
-    "omc": {
-      "source": {
-        "source": "git",
-        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
       }
     },
     "ponytail": {
@@ -105,8 +98,5 @@
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": 1,
-  "CLAUDE_CODE_SPAWN_BACKEND": "tmux",
-  "omcHud": {
-    "preset": "full"
-  }
+  "CLAUDE_CODE_SPAWN_BACKEND": "tmux"
 }
