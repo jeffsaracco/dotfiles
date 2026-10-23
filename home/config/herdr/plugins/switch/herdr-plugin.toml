@@ -1,0 +1,31 @@
+id = "jeff.switch"
+name = "switch"
+version = "0.1.0"
+min_herdr_version = "0.9.1"
+description = "Workspace switcher popup (j/k, enter) and last-tab toggle."
+platforms = ["macos", "linux"]
+
+[[actions]]
+id = "open"
+title = "switch: workspace"
+contexts = ["workspace", "global"]
+command = ["python3", "switch.py", "open"]
+
+[[panes]]
+id = "picker"
+title = "workspaces"
+placement = "popup"
+width = "40%"
+height = "50%"
+command = ["python3", "switch.py", "ui"]
+
+[[actions]]
+id = "last-tab"
+title = "switch: last tab"
+contexts = ["workspace", "global"]
+command = ["python3", "switch.py", "last-tab"]
+
+# Remembers the current and previous tab for last-tab.
+[[events]]
+on = "pane.focused"
+command = ["python3", "switch.py", "event"]

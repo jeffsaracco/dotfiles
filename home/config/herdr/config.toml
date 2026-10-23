@@ -19,24 +19,11 @@ type = "plugin_action"
 command = "chmarax.herdr-nvim.toggle"
 description = "nvim sidebar"
 
-[[keys.command]]
-key = "prefix+o"
-type = "plugin_action"
-command = "chmarax.herdr-nvim.pick-file"
-description = "open file from agent output"
-
 [keys]
 goto = ""
 cycle_pane_previous = "ctrl+h"
-previous_agent = "prefix+comma"
-next_agent = "prefix+period"
-last_pane = "ctrl+space"
-
-[[keys.command]]
-key = "prefix+f"
-type = "plugin_action"
-command = "dartyuhov.blink.open"
-description = "switch agent"
+cycle_pane_next = "ctrl+space"
+settings = "prefix+t"
 
 [[keys.command]]
 key = "prefix+shift+k"          # toggle the floating beads board
@@ -46,5 +33,11 @@ command = "herdr-beads.open-board"
 [[keys.command]]
 key = "prefix+s"
 type = "plugin_action"
-command = "switchboard.menu"
-description = "Switchboard menu"
+command = "jeff.switch.open"
+description = "switch workspace"
+
+[[keys.command]]
+key = "ctrl+semicolon"
+type = "plugin_action"
+command = "jeff.switch.last-tab"
+description = "last tab"
