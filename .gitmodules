@@ -17,3 +17,7 @@
 [submodule "home/zsh/oh-my-zsh/upstream"]
 	path = home/zsh/oh-my-zsh/upstream
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "home/claude/skills/pxl-pixel-art"]
+	path = home/claude/skills/pxl-pixel-art
+	url = https://github.com/augusto-scarvalho/claude-pxl.git
+	ignore = dirty
