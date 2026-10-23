@@ -35,16 +35,15 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bash ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/ponytail-statusline.sh"
+    "command": "/Users/jeff/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "cc-plugin-you-should-know@builtin": true,
-    "desktop-usage-strip@awesome-claude-code-mods": true,
-    "session-meter@jeff-mods": true,
     "ui-themes@ui-themes": true,
     "impeccable@impeccable": true,
     "godot-prompter@skillsmith": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "mattpocock-skills@claude-plugins-official": true,
+    "imessage@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "awesome-claude-code-mods": {
