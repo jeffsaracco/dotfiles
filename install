@@ -70,6 +70,8 @@ if [[ -d "$HOME/.oh-my-zsh" && ! -L "$HOME/.oh-my-zsh" ]]; then
   printf 'Moved the legacy Oh My Zsh checkout to %s.\n' "$backup"
 fi
 
+"$ROOT/script/install-claude.sh"
+
 "$ROOT/script/run-dotbot.sh" "$ROOT/install.conf.json"
 
 if [[ "$WANT_DESKTOP" == true ]]; then

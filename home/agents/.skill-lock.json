@@ -36,6 +36,15 @@
       "skillFolderHash": "b2b42e7aca3661dfcea68e4c1e5167b3bcfd6a35",
       "installedAt": "2026-10-07T18:09:30.820Z",
       "updatedAt": "2026-10-07T18:10:18.953Z"
+    },
+    "swiftui-design-skill": {
+      "source": "wholiver/swiftui-design-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wholiver/swiftui-design-skill.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "2c82638ebd3c801d9d2d12b5f2d6c20495939995",
+      "installedAt": "2026-10-23T23:30:15.198Z",
+      "updatedAt": "2026-10-23T23:30:15.198Z"
     }
   },
   "dismissed": {
