@@ -4,7 +4,7 @@ onboarding = false
 status_indicators = "symbols"
 
 [theme]
-name = "gruvbox"
+name = "vesper"
 auto_switch = false
 
 [terminal]
@@ -41,3 +41,29 @@ key = "ctrl+semicolon"
 type = "plugin_action"
 command = "jeff.switch.last-tab"
 description = "last tab"
+
+[[keys.command]]
+key = "prefix+g"
+type = "plugin_action"
+command = "herdr-theme-picker.open"
+
+[theme.custom]
+panel_bg = "#011627"
+sidebar_bg = "#001221"
+active_row_bg = "#011627"
+selection_bg = "#093b5e"
+surface0 = "#011627"
+surface1 = "#575656"
+surface_dim = "#001423"
+overlay0 = "#575656"
+overlay1 = "#ffffff"
+text = "#cccccc"
+subtext0 = "#ffffff"
+accent = "#82aaff"
+mauve = "#c792ea"
+green = "#22da6e"
+yellow = "#c5e478"
+red = "#ef5350"
+blue = "#82aaff"
+teal = "#21c7a8"
+peach = "#ef5350"
