@@ -31,5 +31,5 @@ for entry in "${github_plugins[@]}"; do
 done
 
 if ! is_installed jeff.switch; then
-  herdr plugin link --enabled "$ROOT/home/config/herdr/plugins/switch"
+  herdr plugin link "$ROOT/home/config/herdr/plugins/switch"
 fi
