@@ -53,13 +53,14 @@ an existing installation recognizes the host macOS release.
 
 ## Safety
 
-The bootstrap does not clean `$HOME`, force-overwrite files, or replace an
-existing non-dotfiles configuration. If a managed destination already exists,
-Dotbot stops so it can be reviewed and moved manually.
+The bootstrap does not clean `$HOME` or delete existing configuration. If a
+managed link destination already exists as a regular file or directory, it is
+moved to `<path>.backup.<timestamp>` before Dotbot links the repository copy.
+Review the backup and merge anything worth keeping into the repository.
 
-The one automatic migration is a legacy `~/.oh-my-zsh` checkout created by an
-older version of this repository. It is moved to a timestamped backup before
-the pinned Oh My Zsh submodule is linked.
+A legacy `~/.oh-my-zsh` checkout created by an older version of this repository
+is moved to a timestamped backup the same way before the pinned Oh My Zsh
+submodule is linked.
 
 The installer does not change the login shell. To opt in after installation:
 

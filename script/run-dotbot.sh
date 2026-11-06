@@ -24,4 +24,5 @@ if [[ ! -x "$DOTBOT" ]]; then
   exit 1
 fi
 
+"$ROOT/script/backup-link-conflicts.sh" "$CONFIG"
 "$DOTBOT" -d "$ROOT" -c "$CONFIG"

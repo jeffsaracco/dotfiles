@@ -30,6 +30,4 @@ for entry in "${github_plugins[@]}"; do
   fi
 done
 
-if ! is_installed jeff.switch; then
-  herdr plugin link "$ROOT/home/config/herdr/plugins/switch"
-fi
+herdr plugin link "$ROOT/home/config/herdr/plugins/switch"
