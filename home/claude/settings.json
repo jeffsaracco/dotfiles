@@ -112,8 +112,5 @@
   "autoContinueAtUsageLimit": false,
   "teammateMode": "tmux",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
-  "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": 1,
-  "CLAUDE_CODE_SPAWN_BACKEND": "tmux",
-  }
+  "agentPushNotifEnabled": true
 }
