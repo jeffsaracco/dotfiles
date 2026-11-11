@@ -95,6 +95,11 @@
       "autoUpdate": true
     }
   },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "pluginConfigs": {
     "cc-plugin-agents-md@builtin": {
       "options": {
@@ -110,9 +115,5 @@
   "agentPushNotifEnabled": true,
   "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": 1,
   "CLAUDE_CODE_SPAWN_BACKEND": "tmux",
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "high"
-    }
   }
 }
