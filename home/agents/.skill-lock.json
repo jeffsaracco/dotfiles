@@ -441,6 +441,15 @@
       "skillFolderHash": "c688cb678c4a699e0642cae40262933f67f42743",
       "installedAt": "2026-11-03T14:34:40.930Z",
       "updatedAt": "2026-11-03T14:34:40.930Z"
+    },
+    "ultrademo": {
+      "source": "ultrademo-hq/ultrademo",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ultrademo-hq/ultrademo.git",
+      "skillPath": ".claude/skills/ultrademo/SKILL.md",
+      "skillFolderHash": "5813607b21c5f1e18dc094d8fba2a6dd3d75f3ce",
+      "installedAt": "2026-11-10T18:50:21.491Z",
+      "updatedAt": "2026-11-10T18:50:21.491Z"
     }
   },
   "dismissed": {
