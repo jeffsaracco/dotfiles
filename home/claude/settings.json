@@ -110,6 +110,7 @@
       "effortLevel": "high"
     }
   },
+  "advisorModel": "fable",
   "pluginConfigs": {
     "cc-plugin-agents-md@builtin": {
       "options": {
@@ -122,6 +123,5 @@
   "autoContinueAtUsageLimit": false,
   "teammateMode": "tmux",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
-  "advisorModel": "fable"
+  "agentPushNotifEnabled": true
 }
