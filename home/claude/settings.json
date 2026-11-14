@@ -48,7 +48,8 @@
     "mattpocock-skills@claude-plugins-official": true,
     "imessage@claude-plugins-official": true,
     "counterparts@counterparts": true,
-    "counterparts-sidebar@counterparts": true
+    "counterparts-sidebar@counterparts": true,
+    "busybar@busybar": true
   },
   "extraKnownMarketplaces": {
     "awesome-claude-code-mods": {
@@ -93,10 +94,19 @@
         "repo": "mlapeter/counterparts"
       },
       "autoUpdate": true
+    },
+    "busybar": {
+      "source": {
+        "source": "github",
+        "repo": "mrlunev/busybar-claude-code"
+      }
     }
   },
   "modelSettings": {
     "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-2": {
       "effortLevel": "high"
     }
   },
