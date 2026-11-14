@@ -122,5 +122,6 @@
   "autoContinueAtUsageLimit": false,
   "teammateMode": "tmux",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "advisorModel": "fable"
 }
