@@ -12,3 +12,5 @@
 
 # Leftover oh-my-claudecode state in older projects
 .omc/
+
+**/.claude/settings.local.json
