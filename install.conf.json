@@ -19,6 +19,8 @@
       "~/.claude": "home/claude",
       "~/.config/herdr/config.toml": "home/config/herdr/config.toml",
       "~/.config/herdr/plugins/config/herdr-spreader/config.yaml": "home/config/herdr/plugins/config/herdr-spreader/config.yaml",
+      "~/.config/herdr-app/keys.json": "home/config/herdr-app/keys.json",
+      "~/.config/herdr-app/settings.json": "home/config/herdr-app/settings.json",
       "~/.config/nvim": "home/config/nvim",
       "~/.config/opencode": "home/config/opencode",
       "~/.gitconfig": "home/git/gitconfig",
