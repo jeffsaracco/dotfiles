@@ -60,7 +60,8 @@
     "ctrl-9": "space.select:9",
     "cmd-e": "mod.open:herdr-nvim",
     "cmd-o": "herdr-nvim.pick",
-    "cmd-shift-e": "herdr-nvim.reveal"
+    "cmd-shift-e": "herdr-nvim.reveal",
+    "cmd-shift-k": "mod.open:quick-switcher"
   },
   "terminal": {
     "cmd-f": "terminal.search",
