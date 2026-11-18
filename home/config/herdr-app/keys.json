@@ -61,7 +61,8 @@
     "cmd-e": "mod.open:herdr-nvim",
     "cmd-o": "herdr-nvim.pick",
     "cmd-shift-e": "herdr-nvim.reveal",
-    "cmd-shift-k": "mod.open:quick-switcher"
+    "cmd-shift-k": "mod.open:quick-switcher",
+    "cmd-shift-r": "mod.open:revive"
   },
   "terminal": {
     "cmd-f": "terminal.search",
