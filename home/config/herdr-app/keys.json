@@ -61,8 +61,9 @@
     "cmd-e": "mod.open:herdr-nvim",
     "cmd-o": "herdr-nvim.pick",
     "cmd-shift-e": "herdr-nvim.reveal",
-    "cmd-shift-k": "mod.open:quick-switcher",
-    "cmd-shift-r": "mod.open:revive"
+    "cmd-shift-r": "mod.open:revive",
+    "cmd-alt-,": "mod.open:better-config",
+    "cmd-shift-k": "mod.open:jump"
   },
   "terminal": {
     "cmd-f": "terminal.search",
@@ -76,5 +77,8 @@
     "cmd-left": "send:\u0001",
     "cmd-right": "send:\u0005",
     "cmd-backspace": "send:\u0015"
+  },
+  "layout:estro": {
+    "cmd-shift-b": "better-sidebar.toggle-panel"
   }
 }

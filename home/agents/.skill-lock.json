@@ -450,6 +450,16 @@
       "skillFolderHash": "5813607b21c5f1e18dc094d8fba2a6dd3d75f3ce",
       "installedAt": "2026-11-10T18:50:21.491Z",
       "updatedAt": "2026-11-10T18:50:21.491Z"
+    },
+    "herdr": {
+      "source": "herdrdev/herdr",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/herdrdev/herdr.git",
+      "commit": "e8d7d9705a7a2c89cef4dd42079379f05685af87",
+      "skillPath": "skills/herdr/SKILL.md",
+      "skillFolderHash": "2be0d86d481d1bb29c62e11ef37b78d27d01b478",
+      "installedAt": "2026-11-21T01:27:28.331Z",
+      "updatedAt": "2026-11-21T01:27:28.331Z"
     }
   },
   "dismissed": {
@@ -461,6 +471,7 @@
     "codex",
     "cursor",
     "droid",
+    "fx",
     "gemini-cli",
     "github-copilot",
     "kilo",
@@ -469,7 +480,6 @@
     "pi",
     "warp",
     "zed",
-    "claude-code",
-    "fx"
+    "claude-code"
   ]
 }
