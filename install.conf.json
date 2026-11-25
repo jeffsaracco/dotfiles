@@ -24,6 +24,7 @@
       "~/.config/herdr-app/settings.json": "home/config/herdr-app/settings.json",
       "~/.config/nvim": "home/config/nvim",
       "~/.config/opencode": "home/config/opencode",
+      "~/.config/rex": "home/config/rex",
       "~/.gitconfig": "home/git/gitconfig",
       "~/.gitignore_global": "home/git/gitignore_global",
       "~/.grc": "home/dotgrc",
