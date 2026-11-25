@@ -136,3 +136,7 @@ export NVM_DIR="$HOME/.nvm"
 # >>> rex-agent-restore >>>
 [[ -r '/opt/homebrew/share/rex-agent-restore/rex-agent-restore.zsh' ]] && source '/opt/homebrew/share/rex-agent-restore/rex-agent-restore.zsh'
 # <<< rex-agent-restore <<<
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/jeff/.local/bin:$PATH"

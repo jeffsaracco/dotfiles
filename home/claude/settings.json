@@ -104,13 +104,6 @@
         "repo": "jame581/skillsmith"
       }
     },
-    "counterparts": {
-      "source": {
-        "source": "github",
-        "repo": "mlapeter/counterparts"
-      },
-      "autoUpdate": true
-    },
     "busybar": {
       "source": {
         "source": "github",
@@ -148,11 +141,11 @@
       "**Repository visibility**: private (jeffsaracco/wasteland-warriors, verified via gh)",
       "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
       "**Secrets management**: None configured",
-      "**Default / protected branches**: main; no rulesets or protected-branch rules listed via gh",
+      "**Default / protected branches**: main (default); no branch protection rules or rulesets listed",
       "**CI/CD deploy targets**: None configured",
       "**Network posture**: None configured",
       "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine or CI runner with open internet",
-      "**Source control**: The trusted repo (jeffsaracco/wasteland-warriors on github.com) and its origin remote only",
+      "**Source control**: The trusted repo (github.com:jeffsaracco/wasteland-warriors.git) and its remote(s) only",
       "**Trusted internal domains**: None configured",
       "**Trusted cloud buckets**: None configured",
       "**Key internal services**: None configured",
@@ -163,9 +156,10 @@
       "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
       "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
       "### User-specific",
-      "**Primary use of Claude Code**: software development (Godot/GDScript game project — Wasteland Warriors)",
-      "**Trusted repo**: jeffsaracco/wasteland-warriors (github.com:jeffsaracco/wasteland-warriors.git), working directory /Users/jeff/workspace/wasteland-warriors",
-      "**Org-specific CLIs**: None configured"
+      "**Primary use of Claude Code**: software development (Godot/GDScript game project)",
+      "**Trusted repo**: /Users/jeff/workspace/games/wasteland-warriors (github.com:jeffsaracco/wasteland-warriors.git, private)",
+      "**Org-specific CLIs**: None configured — `rtk` and `tools` (tools/test.sh) seen in this project are local project scripts, not org CLIs",
+      "routine under jeffsaracco/wasteland-warriors prefix: git push to origin, godot/tools.sh test invocations"
     ]
   }
 }
