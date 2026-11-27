@@ -1,5 +1,3 @@
--- Migrated from tmux, Herdr, Ghostty and Alacritty.
-
 -- tmux (~/.tmux.conf), prefix ctrl+b
 rex.bind("ctrl+b>h", "pane.focus", { direction = "left" })
 rex.bind("ctrl+b>j", "pane.focus", { direction = "down" })
@@ -11,11 +9,6 @@ rex.bind("ctrl+b>[", "pane.copy_mode.enter")
 
 -- ctrl+b starts sequences, so press it twice to send it to the program.
 rex.bind("ctrl+b>ctrl+b", "pane.send_key", { key = "ctrl+b" })
-
--- Herdr (~/.config/herdr/config.toml), prefix ctrl+b
-rex.bind("ctrl+h", "pane.focus_previous")
-rex.bind("ctrl+space", "pane.focus_next")
-rex.bind("ctrl+b>t", "client.settings")
 
 -- >>> raptor >>>
 dofile("/opt/homebrew/opt/raptor/share/raptor/init.lua").setup{}
