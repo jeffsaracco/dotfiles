@@ -81,6 +81,26 @@ Examples are tracked at:
 - `home/git/gitconfig.local.example`
 - `home/zsh/zshrc.local.example`
 
+## Syncing Between Machines
+
+`dotsync` (in `bin/`) commits changes to tracked files, rebases onto the
+remote, pushes, and re-runs Dotbot when `install.conf.json` changed. On macOS,
+`install` loads a launchd agent that runs it at login and every 15 minutes
+(`script/install-dotsync-agent.sh`; log at `~/Library/Logs/dotsync.log`).
+
+Because this repository is public and the working tree is live config,
+`dotsync` never commits untracked files or submodule pointer moves. Add new
+files and bump submodules yourself. On a conflict it aborts the rebase, keeps
+the local commit, and posts a notification; resolve it with
+`git pull --autostash`.
+
+Some apps rewrite their JSON config with per-machine values. `.gitattributes`
+lists those keys (`volatile-keys`). The `json-volatile` filter in
+`home/git/gitconfig` keeps them out of Git and restores each machine's own
+values on checkout. `git status` can flag such a file as modified until the
+next `git add`, even when only those keys changed; plain `git pull` then
+refuses, so use `git pull --autostash`.
+
 ## Services
 
 Start only services needed on a particular machine. For example:

@@ -101,5 +101,6 @@ fi
 
 "$ROOT/script/codespaces-setup.sh"
 "$ROOT/script/install-vim-plugins.sh"
+"$ROOT/script/install-dotsync-agent.sh"
 
 printf 'Dotfiles bootstrap completed.\n'

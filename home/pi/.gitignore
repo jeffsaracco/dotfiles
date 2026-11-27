@@ -4,3 +4,7 @@ agent/sessions/
 agent/install/
 agent/npm/
 agent/models-store.json
+agent/mcp-cache.json
+agent/compact-tools-notices/
+agent/pi-subagents/last-seen-version.json
+agent/tmp/

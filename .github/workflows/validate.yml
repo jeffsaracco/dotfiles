@@ -18,10 +18,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y shellcheck tmux zsh
       - name: Validate shell scripts
         run: |
-          bash -n install script/*.sh bin/rfv
+          bash -n install script/*.sh script/git-json-volatile bin/rfv bin/dotsync
           sh -n bin/tat
           zsh -n home/zsh/zshrc home/zsh/oh-my-zsh/custom/aliases.zsh
-          shellcheck install script/*.sh bin/rfv bin/tat
+          shellcheck install script/*.sh script/git-json-volatile bin/rfv bin/tat bin/dotsync
       - name: Validate structured configuration
         run: |
           python3 -m json.tool install.conf.json >/dev/null

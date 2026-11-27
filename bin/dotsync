@@ -1,0 +1,93 @@
+#!/bin/bash
+# Sync this dotfiles checkout with its remote: commit changes to tracked
+# files, rebase onto the remote, push. Runs from launchd every 15 minutes
+# (script/install-dotsync-agent.sh) and by hand as `dotsync`.
+#
+# The working tree is live config and the repo is public, so it never:
+#   - commits untracked files (it lists them; add new files yourself)
+#   - commits submodule pointer moves (bump those deliberately)
+#   - leaves a conflicted rebase behind (it aborts and keeps the local commit)
+
+set -euo pipefail
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+export GIT_TERMINAL_PROMPT=0
+export GIT_SSH_COMMAND="${GIT_SSH_COMMAND:-ssh -o BatchMode=yes}"
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+say() { printf '%s dotsync: %s\n' "$(date '+%F %T')" "$*"; }
+fail() {
+  say "$*" >&2
+  if [[ "$(uname -s)" == Darwin ]]; then
+    osascript -e 'on run argv' -e 'display notification (item 1 of argv) with title "dotsync"' \
+      -e 'end run' "$*" >/dev/null 2>&1 || true
+  fi
+  exit 1
+}
+
+git_dir="$(git rev-parse --git-dir)"
+for busy in rebase-merge rebase-apply MERGE_HEAD index.lock; do
+  if [[ -e "$git_dir/$busy" ]]; then
+    fail "skipped: git is busy in $ROOT ($busy)"
+  fi
+done
+upstream="$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null)" ||
+  fail "skipped: $(git branch --show-current) has no upstream branch"
+
+# Plugins in submodules update themselves; leave their pointers out.
+submodules=()
+not_submodules=()
+while read -r _ sub; do
+  submodules+=("$sub")
+  not_submodules+=(":(exclude)$sub")
+done < <(git config -f .gitmodules --get-regexp '\.path$' 2>/dev/null || true)
+
+git add --update -- . ${not_submodules[@]+"${not_submodules[@]}"}
+if ! git diff --cached --quiet; then
+  changed="$(git diff --cached --name-only)"
+  git commit --quiet -m "Sync from $(hostname -s)" -m "$changed"
+  say "committed $(printf '%s\n' "$changed" | wc -l | tr -d ' ') file(s)"
+fi
+
+if ! git fetch --quiet; then
+  # Usually just offline; the next run catches up, so don't notify.
+  say "fetch failed; will retry next run" >&2
+  exit 1
+fi
+
+before="$(git rev-parse HEAD)"
+if ! git rebase --quiet --autostash "$upstream"; then
+  conflicts="$(git diff --name-only --diff-filter=U | paste -sd ' ' -)"
+  if [[ -d "$git_dir/rebase-merge" || -d "$git_dir/rebase-apply" ]]; then
+    git rebase --abort
+  fi
+  fail "couldn't rebase onto $upstream${conflicts:+ (conflict in $conflicts)}; run 'git pull --autostash' in $ROOT"
+fi
+
+if [[ "$(git rev-parse HEAD)" != "$before" ]]; then
+  if [[ ${#submodules[@]} -gt 0 ]] &&
+     ! git diff --quiet "$before" HEAD -- .gitmodules "${submodules[@]}"; then
+    git submodule update --init --recursive --quiet || say "submodule update failed" >&2
+  fi
+  if ! git diff --quiet "$before" HEAD -- install.conf.json; then
+    "$ROOT/script/run-dotbot.sh" "$ROOT/install.conf.json"
+  fi
+  if ! git diff --quiet "$before" HEAD -- install.desktop.conf.json; then
+    say "install.desktop.conf.json changed; run ./install desktop if this is a desktop machine"
+  fi
+  say "pulled $(git rev-list --count "$before..HEAD") commit(s)"
+fi
+
+ahead="$(git rev-list --count "$upstream..HEAD")"
+if [[ "$ahead" -gt 0 ]]; then
+  git push --quiet || fail "push to $upstream failed"
+  say "pushed $ahead commit(s)"
+fi
+
+untracked="$(git status --porcelain | sed -n 's/^?? //p')"
+if [[ -n "$untracked" ]]; then
+  say "not synced (untracked; git add them to sync):"
+  printf '%s\n' "$untracked" | sed 's/^/  /'
+fi

@@ -22,3 +22,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[filter "json-volatile"]
+	clean = script/git-json-volatile clean %f
+	# A fresh clone checks out the JSON before the script itself exists.
+	smudge = "test -x script/git-json-volatile && exec script/git-json-volatile smudge %f || cat"
+	required = true

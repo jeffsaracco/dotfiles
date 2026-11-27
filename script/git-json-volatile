@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# Git filter for JSON config that apps rewrite with per-machine values.
+# The keys to drop come from the file's `volatile-keys` attribute in
+# .gitattributes: comma-separated dotted paths, e.g. autoMode.environment.
+#
+#   clean:  drop the keys from what git stores, remembering this machine's
+#           values under .git/json-volatile/
+#   smudge: put the remembered values back when git writes the file
+#
+# Input that isn't valid JSON (a half-written file, conflict markers) passes
+# through untouched. Wired up as filter "json-volatile" in home/git/gitconfig.
+
+set -euo pipefail
+
+# Git may run this from GUI apps or launchd, which leave Homebrew off PATH.
+PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
+# Fail loudly (filter.json-volatile.required) rather than commit the keys.
+command -v jq >/dev/null || { echo "git-json-volatile: jq is required" >&2; exit 1; }
+
+mode=$1
+path=$2
+
+input=$(mktemp)
+trap 'rm -f "$input" "${output:-}"' EXIT
+cat > "$input"
+
+keys=$(git check-attr volatile-keys -- "$path" | sed 's/^.*: volatile-keys: //')
+if [[ -z "$keys" || "$keys" == unspecified || "$keys" == set || "$keys" == unset ]]; then
+  cat "$input"
+  exit 0
+fi
+
+stash_dir="$(git rev-parse --git-common-dir)/json-volatile"
+stash="$stash_dir/${path//\//%}.json"
+output=$(mktemp)
+
+case "$mode" in
+  clean)
+    # Remember only values that are present, so cleaning a file that lacks
+    # them (e.g. a freshly resolved conflict) never forgets this machine's.
+    if jq --arg keys "$keys" --slurpfile old <(cat "$stash" 2>/dev/null || echo '[]') '
+        [$keys | split(",")[] | split(".")] as $paths
+        | ($old[0] // []) as $old
+        | [$paths[] as $p | {path: $p, value: getpath($p)} | select(.value != null)] as $new
+        | {
+            stash: ([$old[] | select(.path as $p | any($new[]; .path == $p) | not)] + $new),
+            output: (reduce $paths[] as $p (.;
+              delpaths([$p])
+              | if ($p | length) > 1 and getpath($p[:-1]) == {} then delpaths([$p[:-1]]) else . end))
+          }' "$input" > "$output" 2>/dev/null; then
+      mkdir -p "$stash_dir"
+      jq '.stash' "$output" > "$stash.tmp" && mv "$stash.tmp" "$stash"
+      jq '.output' "$output"
+    else
+      cat "$input"
+    fi
+    ;;
+  smudge)
+    if [[ -f "$stash" ]] &&
+       jq --slurpfile stash "$stash" \
+         'reduce $stash[0][] as $e (.; setpath($e.path; $e.value))' \
+         "$input" > "$output" 2>/dev/null; then
+      cat "$output"
+    else
+      cat "$input"
+    fi
+    ;;
+  *)
+    printf 'usage: %s clean|smudge <path>\n' "$0" >&2
+    exit 2
+    ;;
+esac

@@ -1,0 +1,4 @@
+# JSON config that apps rewrite with per-machine values: these keys stay out
+# of git and keep each machine's own value. See script/git-json-volatile.
+home/claude/settings.json   filter=json-volatile volatile-keys=autoMode.environment
+home/pi/agent/settings.json filter=json-volatile volatile-keys=lastChangelogVersion
