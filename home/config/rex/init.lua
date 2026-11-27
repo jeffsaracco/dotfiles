@@ -5,7 +5,7 @@ rex.bind("ctrl+b>k", "pane.focus", { direction = "up" })
 rex.bind("ctrl+b>l", "pane.focus", { direction = "right" })
 
 rex.bind("ctrl+b>,", "pane.split", { direction = "right" })
-rex.bind("ctrl+b>-", "pane.split", { direction = "down" })
+rex.bind("ctrl+b>shift+5", "pane.split", { direction = "down" })
 
 rex.bind("ctrl+b>[", "pane.copy_mode.enter")
 
