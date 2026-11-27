@@ -3,8 +3,10 @@ rex.bind("ctrl+b>h", "pane.focus", { direction = "left" })
 rex.bind("ctrl+b>j", "pane.focus", { direction = "down" })
 rex.bind("ctrl+b>k", "pane.focus", { direction = "up" })
 rex.bind("ctrl+b>l", "pane.focus", { direction = "right" })
-rex.bind("ctrl+b>v", "pane.split", { direction = "right" })
+
+rex.bind("ctrl+b>,", "pane.split", { direction = "right" })
 rex.bind("ctrl+b>-", "pane.split", { direction = "down" })
+
 rex.bind("ctrl+b>[", "pane.copy_mode.enter")
 
 -- ctrl+b starts sequences, so press it twice to send it to the program.
