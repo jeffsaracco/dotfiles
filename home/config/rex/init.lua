@@ -13,7 +13,7 @@ rex.bind("ctrl+b>shift+\\", "pane.split", { direction = "right" })
 
 rex.bind("ctrl+b>[", "pane.copy_mode.enter")
 rex.bind("ctrl+b>,", "pane.rename")
-rex.bind("ctrl+b>shift+,", "pane.rename")
+rex.bind("ctrl+b>shift+,", "session.rename")
 
 -- ctrl+b starts sequences, so press it twice to send it to the program.
 rex.bind("ctrl+b>ctrl+b", "pane.send_key", { key = "ctrl+b" })
