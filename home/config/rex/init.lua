@@ -12,23 +12,6 @@ rex.bind("ctrl+b>[", "pane.copy_mode.enter")
 -- ctrl+b starts sequences, so press it twice to send it to the program.
 rex.bind("ctrl+b>ctrl+b", "pane.send_key", { key = "ctrl+b" })
 
--- >>> raptor >>>
-dofile("/opt/homebrew/opt/raptor/share/raptor/init.lua").setup{}
-rex.bind("shift+cmd+o", "raptor")
-rex.bind("shift+cmd+c", "raptor_pr_open")
-rex.bind("shift+cmd+n", "raptor_worktree_new")
-rex.bind("cmd+opt+n", "raptor_worktree_agent")
-rex.bind("ctrl+cmd+1", "raptor_pin_1")
-rex.bind("ctrl+cmd+2", "raptor_pin_2")
-rex.bind("ctrl+cmd+3", "raptor_pin_3")
-rex.bind("ctrl+cmd+4", "raptor_pin_4")
-rex.bind("ctrl+cmd+5", "raptor_pin_5")
-rex.bind("ctrl+cmd+6", "raptor_pin_6")
-rex.bind("ctrl+cmd+7", "raptor_pin_7")
-rex.bind("ctrl+cmd+8", "raptor_pin_8")
-rex.bind("ctrl+cmd+9", "raptor_pin_9")
--- <<< raptor <<<
-
 -- >>> rex-agent-restore >>>
 local ok_rar, rar = pcall(require, "rex_agent_restore")
 if ok_rar and type(rar) == "table" then rar.setup({ bin = "/opt/homebrew/bin/rex-agent-restore" }) end
